@@ -8,12 +8,11 @@ class ReceptaclesController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:user_id])
     @receptacle = Receptacle.new
   end
 
   def create
-    @user = User.find(params[:user_id])
+    @user = current_user
     @receptacle = Receptacle.new(receptacle_params)
     @receptacle.user = @user
     if @receptacle.save
