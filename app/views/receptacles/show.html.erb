@@ -1,0 +1,9 @@
+<div class='container'>
+  <h1><%= receptacle.name %></h1>
+  <% @receptacles.each do |receptacle| %>
+  <%= image_tag receptacle.picture %>
+  <i class="fa-solid fa-euro-sign"><p><%= receptacle.price %></p>
+  <p><%= receptacle.capacity %></p>
+  <p> <%= link_to "Delete", receptacle_path(receptacle), method: :delete, data: { confirm: "Are you sure?" } %></p>
+  <% end %>
+</div>
