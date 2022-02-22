@@ -1,13 +1,70 @@
 
-.banner{
+.banner {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
   justify-content: center;
   padding: 30px;
   height: 60vh;
   background-size: cover;
 }
+
+.home-banner {
+  color: white;
+  h1 {
+    font-size: 100px;
+  }
+}
+
+.home-banner {
+  background: linear-gradient(316deg, #4270cf, #15b654);
+  background-size: 400% 400%;
+
+  -webkit-animation: AnimationName 13s ease infinite;
+  -moz-animation: AnimationName 13s ease infinite;
+  animation: AnimationName 13s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 90%
+  }
+
+  50% {
+    background-position: 100% 11%
+  }
+
+  100% {
+    background-position: 0% 90%
+  }
+}
+
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 0% 90%
+  }
+
+  50% {
+    background-position: 100% 11%
+  }
+
+  100% {
+    background-position: 0% 90%
+  }
+}
+
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 90%
+  }
+
+  50% {
+    background-position: 100% 11%
+  }
+
+  100% {
+    background-position: 0% 90%
+=======
 .receptacles-banner{
   display: flex;
   align-items: center;

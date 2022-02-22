@@ -1,24 +1,16 @@
 #log-in-button{
   padding: 10px 20px;
-  background-color: rgb(67, 67, 216);
-  color: white;
+  background-color: rgb(255, 255, 255);
+  color: gray;
   text-decoration: none;
+  border-radius: 16px;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    color: white;
+    background-color: #2658BD;
   border-radius: 4px;
   &:hover{
   background-color: rgb(53, 53, 236);
   }
 }
-
-.back-button{
-  padding: 10px 20px;
-  background-color: white;
-  border-color: black 1px;
-  color: black;
-  text-decoration: none;
-  border-radius: 4px;
-  &:hover{
-    background-color: white(196, 195, 195);
-    border-color: black 1px;
-    color: black
-  }
 }
