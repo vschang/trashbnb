@@ -45,6 +45,6 @@ class ReceptaclesController < ApplicationController
   private
 
   def receptacle_params
-    params.require(:receptacle).permit(:name, :picture, :capacity, :price_per_day, :address)
+    params.require(:receptacle).permit(:name, :picture, :capacity, :price_per_day, :address, :description)
   end
 end
