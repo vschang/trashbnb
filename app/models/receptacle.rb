@@ -1,4 +1,5 @@
 class Receptacle < ApplicationRecord
+  has_one_attached :picture
   has_many :users, through: :bookings
   belongs_to :user
   validates :name, presence: true

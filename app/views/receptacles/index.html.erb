@@ -1,8 +1,9 @@
-<div class='container'>
-  <h1>Available Receptacles</h1>
+
+<div class="banner"><h1>Available Receptacles</h1></div>
+<div class='card-container'>
   <% @receptacles.each do |receptacle| %>
     <div class="receptacle-card">
-      <img src= <%="#{receptacle.picture}"%> width="400" height="300">
+      <%= cl_image_tag receptacle.picture.key, height: 300, width: 400, crop: :fill %>
       <div>
         <h2>
           <%= receptacle.name %>
