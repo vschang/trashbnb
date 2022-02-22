@@ -6,6 +6,7 @@ class ReceptaclesController < ApplicationController
 
   def show
     @receptacle = Receptacle.find(params[:id])
+    authorize @receptacle
   end
 
   def new
@@ -17,7 +18,6 @@ class ReceptaclesController < ApplicationController
     @user = current_user
     @receptacle = Receptacle.new(receptacle_params)
     authorize @receptacle
-    
     @receptacle.user = @user
     if @receptacle.save
       redirect_to receptacle_path(@receptacle)
