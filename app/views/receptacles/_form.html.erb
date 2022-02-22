@@ -1,6 +1,7 @@
 <%= simple_form_for @receptacle do |f| %>
   <%= f.input :name, required: true %>
   <%= f.input :picture, as: :file %>
+  <%= f.input :description, required: true %>
   <%= f.input :capacity, required: true %>
   <%= f.input :price_per_day, required: true %>
   <%= f.input :address, required: true %>
