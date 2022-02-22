@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_22_091247) do
+ActiveRecord::Schema.define(version: 2022_02_22_114743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,9 +57,8 @@ ActiveRecord::Schema.define(version: 2022_02_22_091247) do
 
   create_table "receptacles", force: :cascade do |t|
     t.string "name"
-    t.string "picture"
-    t.integer "capacity"
-    t.float "price_per_day"
+    t.bigint "capacity"
+    t.bigint "price_per_day"
     t.string "address"
     t.float "latitude"
     t.float "longitude"
