@@ -1,14 +1,7 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://picsum.photos/seed/picsum/1080/1080')">
-  <h1>trashi</h1>
-  <% if user_signed_in? == false %>
-  <%= link_to "Log In", new_user_session_path, id: "log-in-button" %>
-  <% else %>
-  <%= link_to "Get to your Dashboard", dashboard_path, id: "log-in-button" %>
-  <% end %>
-</div>
-
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://res.cloudinary.com/dsh0ehuue/image/upload/e_blur:200/v1645535897/recycle-banner-background_u7tgc6.jpg')">
+  <h3>Welcome to</h3>
   <h1>trashi</h1>
+  <h2>your trash is our treasure!</h2>
   <% if user_signed_in? == false %>
   <%= link_to "Log In", new_user_session_path, id: "log-in-button" %>
   <% else %>
