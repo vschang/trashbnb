@@ -1,16 +1,32 @@
-<h2><%= @receptacle.name %></h2>
-<p><%= @receptacle.description%></p>
-<p><i class="fa-solid fa-euro-sign"></i><%= @receptacle.price_per_day %></p>
-<p><%= @receptacle.capacity %> kg</p>
-<p><%= @receptacle.address %></p>
-<%= cl_image_tag @receptacle.picture.key, height: 300, width: 400, crop: :fill %>
+<div class='container'>
+  <div class='d-flex flex-row mt-4 mb-4 mb-4'>
+    <div>
+    <h2><%= @receptacle.name %></h2>
+    <%= cl_image_tag @receptacle.picture.key, height: 400, width: 400, crop: :fill, :class => 'rounded' %>
+    </div>
 
-<% if policy(@receptacle).update? %>
-<%= link_to 'Edit', edit_receptacle_path(@receptacle) %>
-<% end %>
+    <div class='d-flex flex-column m-4 pt-4 mt-4 justify-content-between'>
+      <div>
+        <p><em><%= @receptacle.description%></em></p>
+      </div>
+      <div>
+        <p><strong>Price Per Day:</strong>  <i class="fa-solid fa-euro-sign"></i><%= @receptacle.price_per_day %></p>
+        <p><strong>Capacity:</strong>  <%= @receptacle.capacity %> kg</p>
+      </div>
+    </div>
+  </div>
 
-<% if policy(@receptacle).destroy? %>
-<%= link_to 'Delete', @receptacle, method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
+  <div>
+    <% if policy(@receptacle).update? %>
+    <%= link_to 'Edit', edit_receptacle_path(@receptacle) %>
+    <% end %>
 
-<%= link_to 'Back', receptacles_path %>
+    <% if policy(@receptacle).destroy? %>
+    <%= link_to 'Delete', @receptacle, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  </div>
+
+  <div>
+    <%= link_to 'Back', receptacles_path, {class: 'btn btn-outline-dark'} %>
+  </div>
+</div>
