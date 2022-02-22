@@ -1,0 +1,22 @@
+<div class='container'>
+  <h1>Available Receptacles</h1>
+  <% @receptacles.each do |receptacle| %>
+    <div class="receptacle-card">
+      <img src= <%="#{receptacle.picture}"%> width="400" height="300">
+      <div>
+        <h2>
+          <%= receptacle.name %>
+        </h2>
+        <p><%= receptacle.price_per_day %> <i class="fa-solid fa-euro-sign"></i></p>
+        <p>Capacity:<%= receptacle.capacity %></p>
+        <% if policy(receptacle).show? %>
+          <%= link_to 'More Info', receptacle %>
+        <% end %>
+      </div>
+    <%# # UNCOMMENT WHEN NEW METHOD IS DONE %>
+    <%# # <% if policy(Receptacle).create? %>
+    <%# # <%= link_to "New Receptacle", new_receptacle_path %>
+    <%# # <% end %>
+    </div>
+  <% end %>
+</div>
