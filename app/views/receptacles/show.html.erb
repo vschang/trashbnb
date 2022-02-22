@@ -1,8 +1,8 @@
 <div class='container'>
   <p><%= @receptacle.name %></p>
-  <p><%= @receptacle.price_per_day %></p>
+  <p><%= @receptacle.description%>
+  <i class="fa-solid fa-euro-sign"></i><p><%= @receptacle.price_per_day %></p>
   <p><%= @receptacle.capacity %></p>
   <p><%= @receptacle.address %></p>
   <img src= <%="#{@receptacle.picture}"%> width="400" height="300">
-
 </div>
