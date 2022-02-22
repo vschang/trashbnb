@@ -2,11 +2,14 @@
   width: 100%;
   display: grid;
   // display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-column-gap: 10px;
   grid-row-gap:10px;
   padding-left: 10px;
   padding-right: 10px;
+  a{
+    text-decoration: none;
+  }
 }
 
 .receptacle-card{
@@ -15,34 +18,24 @@
   flex-direction: column;
   img{
     object-fit: cover;
-    height: 400px;
+    height: 500px;
     width: 100%;
   }
 
-
 }
 .card-info{
-  background-color: rgb(219, 219, 219);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  height: 100px;
-  p{
-    margin: 0;
-    font-size:30px;
+  color: rgb(51, 109, 175);
+  background-color: white;
+  padding: 20px;
 
-  }
   h2{
-    margin: 0;
-    font-size:25px;
-    padding: 15px;
-  }
-  a{
     text-decoration: none;
+    margin: 0;
+    font-size: 40px;
     padding: 15px;
-
-  }
-}
-.masonry-grid > div{
-  margin: 5px 1px;
+    color: rgb(24, 24, 24);
+    }
 }
