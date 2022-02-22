@@ -1,3 +1,19 @@
+.card-container{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  
+}
+
+
 .receptacle-card{
-  background-color: grey;
+  // background-color: grey;
+
+  img{
+    object-fit: cover;
+  }
+
 }
