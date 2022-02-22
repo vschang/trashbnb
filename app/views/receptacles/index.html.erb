@@ -1,16 +1,9 @@
-<div class='container'>
-  <h1>Available Receptacles</h1>
+
+<div class="banner"><h1>Available Receptacles</h1></div>
+<div class='card-container'>
   <% @receptacles.each do |receptacle| %>
-<<<<<<< HEAD
-  <%= cl_image_tag receptacle.picture.key, height: 300, width: 400, crop: :fill %>
-  <h2><%= receptacle.name %></h2>
-  <i class="fa-solid fa-euro-sign"></i><p><%= receptacle.price_per_day %></p>
-  <p>Capacity:<%= receptacle.capacity %></p>
-  <%= link_to "More Info", receptacle_path(receptacle) %>
-  <%= link_to "Edit", edit_receptacle_path(receptacle) %>
-=======
     <div class="receptacle-card">
-      <img src= <%="#{receptacle.picture}"%> width="400" height="300">
+      <%= cl_image_tag receptacle.picture.key, height: 300, width: 400, crop: :fill %>
       <div>
         <h2>
           <%= receptacle.name %>
@@ -26,6 +19,5 @@
     <%# # <%= link_to "New Receptacle", new_receptacle_path %>
     <%# # <% end %>
     </div>
->>>>>>> master
   <% end %>
 </div>
