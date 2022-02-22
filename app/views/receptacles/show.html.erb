@@ -4,10 +4,8 @@
   <i class="fa-solid fa-euro-sign"></i><p><%= @receptacle.price_per_day %></p>
   <p><%= @receptacle.capacity %></p>
   <p><%= @receptacle.address %></p>
-<<<<<<< HEAD
+
   <%= cl_image_tag @receptacle.picture.key, height: 300, width: 400, crop: :fill %>
-=======
-  <img src= <%="#{@receptacle.picture}"%> width="400" height="300">
 
   <%# UNCOMMENT WHEN EDIT METHOD IS DONE
   <% if policy(receptacle).update? %>
@@ -18,5 +16,4 @@
   <% if policy(receptacle).destroy? %>
   <%# <%= link_to 'Delete', receptacle, method: :delete, data: { confirm: 'Are you sure?' } %>
   <%# <% end %>
->>>>>>> master
 </div>
