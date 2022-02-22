@@ -33,14 +33,18 @@ class ReceptaclesController < ApplicationController
 
   def update
     @receptacle = Receptacle.find(params[:id])
+    authorize @receptacle
     @receptacle.update(receptacle_params)
     redirect_to receptacle_path(@receptacle)
   end
-  # def destroy
-  #   @receptacle = Receptacle.find(params[:id])
-  #   @receptacle.destroy
-  #   redirect_to user_path(@receptacle.user)
-  # end
+
+  def destroy
+    @receptacle = Receptacle.find(params[:id])
+    authorize @receptacle
+
+    @receptacle.destroy
+    redirect_to receptacles_path
+  end
 
   private
 
