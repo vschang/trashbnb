@@ -1,5 +1,6 @@
 class ReceptaclesController < ApplicationController
   def index
+    @receptacles = policy_scope(Receptacle).order(created_at: :desc)
     @receptacles = Receptacle.all
   end
 
@@ -9,11 +10,14 @@ class ReceptaclesController < ApplicationController
 
   def new
     @receptacle = Receptacle.new
+    authorize @receptacle
   end
 
   def create
     @user = current_user
     @receptacle = Receptacle.new(receptacle_params)
+    authorize @receptacle
+    
     @receptacle.user = @user
     if @receptacle.save
       redirect_to receptacle_path(@receptacle)
