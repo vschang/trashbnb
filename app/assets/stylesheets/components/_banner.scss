@@ -64,5 +64,17 @@
 
   100% {
     background-position: 0% 90%
+=======
+.receptacles-banner{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+  background-size: cover;
+  height: 400px;
+  h1{
+    font-style: normal;
+    margin: 0;
   }
 }
