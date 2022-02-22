@@ -21,7 +21,7 @@ class ReceptaclesController < ApplicationController
       render :new
     end
   end
-  
+
   def edit
     @receptacle = Receptacle.find(params[:id])
   end

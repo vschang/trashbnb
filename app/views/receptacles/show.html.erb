@@ -4,5 +4,5 @@
   <i class="fa-solid fa-euro-sign"></i><p><%= @receptacle.price_per_day %></p>
   <p><%= @receptacle.capacity %></p>
   <p><%= @receptacle.address %></p>
-  <img src= <%="#{@receptacle.picture}"%> width="400" height="300">
+  <%= cl_image_tag @receptacle.picture.key, height: 300, width: 400, crop: :fill %>
 </div>

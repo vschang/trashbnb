@@ -1,7 +1,7 @@
 <div class='container'>
   <h1>Available Receptacles</h1>
   <% @receptacles.each do |receptacle| %>
-  <img src= <%="#{receptacle.picture}"%> width="400" height="300">
+  <%= cl_image_tag receptacle.picture.key, height: 300, width: 400, crop: :fill %>
   <h2><%= receptacle.name %></h2>
   <i class="fa-solid fa-euro-sign"></i><p><%= receptacle.price_per_day %></p>
   <p>Capacity:<%= receptacle.capacity %></p>
@@ -9,4 +9,3 @@
   <%= link_to "Edit", edit_receptacle_path(receptacle) %>
   <% end %>
 </div>
-
