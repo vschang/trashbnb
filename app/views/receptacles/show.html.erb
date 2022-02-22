@@ -5,4 +5,14 @@
   <p><%= @receptacle.capacity %></p>
   <p><%= @receptacle.address %></p>
   <img src= <%="#{@receptacle.picture}"%> width="400" height="300">
+
+  <%# UNCOMMENT WHEN EDIT METHOD IS DONE
+  <% if policy(receptacle).update? %>
+  <%# <%= link_to 'Edit', edit_receptacle_path(receptacle) %>
+  <%# <% end %>
+
+  <%# UNCOMMENT WHEN DELETE METHOD IS DONE
+  <% if policy(receptacle).destroy? %>
+  <%# <%= link_to 'Delete', receptacle, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%# <% end %>
 </div>
