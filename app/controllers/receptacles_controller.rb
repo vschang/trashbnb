@@ -1,7 +1,6 @@
 class ReceptaclesController < ApplicationController
   def index
     @receptacles = policy_scope(Receptacle).order(created_at: :desc)
-    @receptacles = Receptacle.all
   end
 
   def show
@@ -29,6 +28,7 @@ class ReceptaclesController < ApplicationController
 
   def edit
     @receptacle = Receptacle.find(params[:id])
+    authorize @receptacle
   end
 
   def update

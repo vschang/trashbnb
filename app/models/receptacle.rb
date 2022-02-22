@@ -6,6 +6,5 @@ class Receptacle < ApplicationRecord
   validates :price_per_day, presence: true
   validates :capacity, presence: true
   validates :address, presence: true
-  validates :picture, presence: true
   validates :description, presence: true
 end
