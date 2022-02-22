@@ -1,17 +1,16 @@
-<div class='container'>
-  <p><%= @receptacle.name %></p>
-  <p><%= @receptacle.description%>
-  <i class="fa-solid fa-euro-sign"></i><p><%= @receptacle.price_per_day %></p>
-  <p><%= @receptacle.capacity %></p>
-  <p><%= @receptacle.address %></p>
-  <%= cl_image_tag @receptacle.picture.key, height: 300, width: 400, crop: :fill %>
-  <%# UNCOMMENT WHEN EDIT METHOD IS DONE
-  <% if policy(receptacle).update? %>
-  <%# <%= link_to 'Edit', edit_receptacle_path(receptacle) %>
-  <%# <% end %>
+<h2><%= @receptacle.name %></h2>
+<p><%= @receptacle.description%></p>
+<p><i class="fa-solid fa-euro-sign"></i><%= @receptacle.price_per_day %></p>
+<p><%= @receptacle.capacity %> kg</p>
+<p><%= @receptacle.address %></p>
+<%= cl_image_tag @receptacle.picture.key, height: 300, width: 400, crop: :fill %>
 
-  <%# UNCOMMENT WHEN DELETE METHOD IS DONE
-  <% if policy(receptacle).destroy? %>
-  <%# <%= link_to 'Delete', receptacle, method: :delete, data: { confirm: 'Are you sure?' } %>
-  <%# <% end %>
-</div>
+<% if policy(@receptacle).update? %>
+<%= link_to 'Edit', edit_receptacle_path(@receptacle) %>
+<% end %>
+
+<% if policy(@receptacle).destroy? %>
+<%= link_to 'Delete', @receptacle, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+
+<%= link_to 'Back', receptacles_path %>

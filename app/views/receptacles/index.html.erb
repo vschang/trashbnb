@@ -10,17 +10,11 @@
               <%= receptacle.name %>
             </h2>
             <div>
-              <%# <p><%= receptacle.price_per_day %
-              <%# <div>Capacity:<%= receptacle.capacity %>
               <% if policy(receptacle).show?%>
               <%= link_to 'More Info', receptacle %>
               <% end %>
             </div>
           </div>
-        <%# # UNCOMMENT WHEN NEW METHOD IS DONE %>
-        <%# # <% if policy(Receptacle).create? %>
-        <%# # <%= link_to "New Receptacle", new_receptacle_path %>
-        <%# # <% end %>
       </div>
     <% end %>
   </div>
