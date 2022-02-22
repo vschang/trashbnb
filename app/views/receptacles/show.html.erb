@@ -4,13 +4,7 @@
   <i class="fa-solid fa-euro-sign"></i><p><%= @receptacle.price_per_day %></p>
   <p><%= @receptacle.capacity %></p>
   <p><%= @receptacle.address %></p>
-<<<<<<< HEAD
-
   <%= cl_image_tag @receptacle.picture.key, height: 300, width: 400, crop: :fill %>
-
-=======
-  <%= cl_image_tag @receptacle.picture.key, height: 300, width: 400, crop: :fill %>
->>>>>>> master
   <%# UNCOMMENT WHEN EDIT METHOD IS DONE
   <% if policy(receptacle).update? %>
   <%# <%= link_to 'Edit', edit_receptacle_path(receptacle) %>
