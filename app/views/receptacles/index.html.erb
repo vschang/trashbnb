@@ -3,7 +3,7 @@
 <div class='card-container'>
   <% @receptacles.each do |receptacle| %>
     <div class="receptacle-card">
-      <%= cl_image_tag receptacle.picture.key, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag receptacle.picture.key, height: 400, width: 400, crop: :fill %>
       <div>
         <h2>
           <%= receptacle.name %>
