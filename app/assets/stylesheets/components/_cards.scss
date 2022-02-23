@@ -1,6 +1,6 @@
 .card-container{
   margin: auto;
-  width: 100%;
+  width: 60%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -8,14 +8,15 @@
 
   a{
     text-decoration: none;
+    margin:0px;
   }
 }
 
 .receptacle-card{
   background-color: pink;
-  margin: 20px;
-  width: 25em;
-  height: 40em;
+  margin: 20px 20px;
+  width: 400px;
+  height: 700px;
   display: flex;
   flex-direction: column;
   justify-content: left;
@@ -56,4 +57,14 @@
   justify-content: left;
   align-items: center;
   width: 100%;
+}
+.map-cards-container{
+  display: flex;
+
+}
+.map-section{
+  position: sticky;
+  margin-top: 20px;
+  top: 6vh;
+  border-radius: 30px;
 }
