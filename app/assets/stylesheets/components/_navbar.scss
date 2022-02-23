@@ -46,3 +46,15 @@ a {
       color: gray
     }
  }
+
+ .toggler {
+   color: white;
+   &:hover {
+     color: gray;
+   }
+ }
+
+ .navbar-toggler {
+   padding: 0px;
+   padding-bottom: 6px;
+ }
