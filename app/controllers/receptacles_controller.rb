@@ -1,6 +1,15 @@
 class ReceptaclesController < ApplicationController
   def index
     @receptacles = policy_scope(Receptacle).order(created_at: :desc)
+
+    @markers = @receptacles.geocoded.map do |receptacle|
+      {
+        lat: receptacle.latitude,
+        lng: receptacle.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { receptacle: receptacle }),
+        image_url: helpers.asset_url("trash_map_icon.png")
+      }
+    end
   end
 
   def show
