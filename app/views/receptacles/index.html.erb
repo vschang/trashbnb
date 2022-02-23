@@ -6,14 +6,17 @@
     <% @receptacles.each do |receptacle| %>
       <% if policy(receptacle).show?%>
         <%= link_to receptacle do%>
-      <div class="receptacle-card" >
-          <%= cl_image_tag receptacle.picture.key, height: 2000, width: 2000, crop: :fill%>
-          <div class="card-info">
+        <div class="receptacle-card" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)), url('<%= cl_image_path receptacle.picture.key, height: 2000, width: 2000, crop: :fill %>')">
+          <div class="card-head">
+            <h3><%= receptacle.price_per_day %>€</h3>
+          </div>
+          <div class="card-body">
             <h2>
               <%= receptacle.name %>
             </h2>
           </div>
-          </div>
+
+        </div>
           <% end %>
       <% end %>
     <% end %>
