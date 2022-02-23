@@ -23,7 +23,7 @@ receptacle = Receptacle.new(
   name: 'Pre-Galvanized Trash Can',
   capacity: 80,
   price_per_day: 2000,
-  address: Faker::Address.full_address,
+  address: 'Calle Dr. Esquerdo, 70, 28007 Madrid',
   description: 'Your classic pre-galvanized trash can perfect for any ocassion. Includes lid.',
   user: trash_king
 )
@@ -35,7 +35,7 @@ receptacle = Receptacle.new(
   name: 'Dumpster on Fire',
   capacity: 800,
   price_per_day: 50_000,
-  address: Faker::Address.full_address,
+  address: 'Calle de Narváez, 49, 28009 Madrid',
   description: 'Sometimes a dumpster fire is exactly what you need to get rid of your trash. Use with caution!',
   user: the_garbage_man
 )
@@ -45,9 +45,9 @@ receptacle.save
 
 receptacle = Receptacle.new(
   name: 'A landfill',
-  capacity: 100000,
-  price_per_day: 10000,
-  address: Faker::Address.full_address,
+  capacity: 100_000,
+  price_per_day: 10_000,
+  address: 'Calle de Bailén, 28071 Madrid',
   description: 'While not the most environmentally friendly, a landfill is the perfect place to get rid of tons and tons of trash. Includes truck service.',
   user: dumpster_fire
 )
@@ -59,7 +59,7 @@ receptacle = Receptacle.new(
   name: 'The Great Pacific Garbage Patch',
   capacity: 5_725_900,
   price_per_day: 9_999_999_999,
-  address: Faker::Address.full_address,
+  address: 'Plaza del Emperador Carlos V, 28045 Madrid',
   description: 'An island of trash in the North Pacific Ocean created by areas of spinning marine debris. A perfect island getaway for your trash.',
   user: basura_boy
 )
@@ -71,7 +71,7 @@ receptacle = Receptacle.new(
   name: 'The Satellite Graveyard',
   capacity: 1_000_000_000,
   price_per_day: 1_234_567_891,
-  address: Faker::Address.full_address,
+  address: 'Plaza Mayor, 28012 Madrid',
   description: 'If you can afford the luxury, why not fly your trash to space? Have your trash join disused satellites while orbiting the earth',
   user: the_garbage_man
 )
@@ -83,7 +83,7 @@ receptacle = Receptacle.new(
   name: 'Black Hole',
   capacity: 100_000_000_000,
   price_per_day: 9_999_999,
-  address: Faker::Address.full_address,
+  address: 'Calle de Atocha, 125, 28012 Madrid',
   description: 'Have an infinite amount of trash? The Black Hole will take care of it. Spaceship shuttle service included.',
   user: muffin_man
 )
