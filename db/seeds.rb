@@ -75,7 +75,7 @@ receptacle = Receptacle.new(
   description: 'If you can afford the luxury, why not fly your trash to space? Have your trash join disused satellites while orbiting the earth',
   user: the_garbage_man
 )
-file = URI.open('https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2008/03/debris_objects_-_mostly_debris_-_in_low_earth_orbit_leo_-_view_over_the_equator/9836792-3-eng-GB/Debris_objects_-_mostly_debris_-_in_low_Earth_orbit_LEO_-_view_over_the_equator.jpg')
+file = URI.open('https://wp-assets.futurism.com/2018/02/spaceman.jpg')
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
 receptacle.save
 
