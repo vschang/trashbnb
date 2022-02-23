@@ -1,16 +1,13 @@
 #log-in-button{
   padding: 10px 20px;
-  background-color: rgb(255, 255, 255);
+  background-color: white;
   color: gray;
   text-decoration: none;
   border-radius: 16px;
   transition: 0.3s ease-in-out;
+  margin: 20px;
   &:hover {
     color: white;
-    background-color: #2658BD;
-  border-radius: 4px;
-  &:hover{
-  background-color: rgb(53, 53, 236);
+    background-color: black;
   }
-}
 }

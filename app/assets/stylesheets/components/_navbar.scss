@@ -1,6 +1,23 @@
 .navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+  background: black;
+  transition: 0.5s background-color ease;
+}
+
+.container,
+.navbar>.container-fluid,
+.navbar>.container-sm,
+.navbar>.container-md,
+.navbar>.container-lg,
+.navbar>.container-xl,
+.navbar>.container-xxl {
+  display: flex;
+  flex-wrap: inherit;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-lewagon-transparent {
+  background-color: rgba(0, 0, 0, 0.55);
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -13,58 +30,19 @@
 
 a {
   text-decoration: none;
-  color: black;
+  color: white;
+  margin: 8px;
   transition: 0.3s ease-in-out;
   &:hover{
-    .css-selector {
-      background: linear-gradient(316deg, #2658bd, #15b654);
-      background-size: 400% 400%;
-
-      -webkit-animation: AnimationName 13s ease infinite;
-      -moz-animation: AnimationName 13s ease infinite;
-      animation: AnimationName 13s ease infinite;
-    }
-
-    @-webkit-keyframes AnimationName {
-      0% {
-        background-position: 0% 90%
-      }
-
-      50% {
-        background-position: 100% 11%
-      }
-
-      100% {
-        background-position: 0% 90%
-      }
-    }
-
-    @-moz-keyframes AnimationName {
-      0% {
-        background-position: 0% 90%
-      }
-
-      50% {
-        background-position: 100% 11%
-      }
-
-      100% {
-        background-position: 0% 90%
-      }
-    }
-
-    @keyframes AnimationName {
-      0% {
-        background-position: 0% 90%
-      }
-
-      50% {
-        background-position: 100% 11%
-      }
-
-      100% {
-        background-position: 0% 90%
-      }
-    }
+    color: gray
   }
 }
+ .navbar-light .navbar-nav .nav-link {
+    color: white;
+    padding: 0px;
+    margin: 8px;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      color: gray
+    }
+ }
