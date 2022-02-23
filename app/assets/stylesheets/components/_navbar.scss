@@ -1,6 +1,7 @@
 .navbar-lewagon {
   background: black;
   transition: 0.5s background-color ease;
+  height: 6vh;
 }
 
 .container,
@@ -13,7 +14,7 @@
   display: flex;
   flex-wrap: inherit;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .navbar-lewagon-transparent {
@@ -33,6 +34,8 @@ a {
   color: white;
   margin: 8px;
   transition: 0.3s ease-in-out;
+  font-family: 'SF Pro Display', sans-serif;
+  font-weight: 200;
   &:hover{
     color: gray
   }
@@ -58,3 +61,19 @@ a {
    padding: 0px;
    padding-bottom: 6px;
  }
+
+.navbar-expand-sm .navbar-nav .dropdown-menu {
+  background-color: rgba(0, 0, 0, 0.55);
+  border-radius: 30px;
+  margin-top: 2vh;
+}
+
+.dropdown-item {
+  transition: .50s;
+  color: white;
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+  background-color: transparent !important;
+  color: gray;
+}

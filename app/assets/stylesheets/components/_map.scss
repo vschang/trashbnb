@@ -15,10 +15,8 @@
 
 .mapboxgl-ctrl-geocoder {
   max-width: none;
-  width: 100%;
   border: 1px solid lightgrey;
   box-shadow: none;
-  background: black;
   p{
     color: white;
   }
@@ -26,4 +24,5 @@
 
 .label-style{
   color: white !important;
+  border-radius: 30px;
 }
