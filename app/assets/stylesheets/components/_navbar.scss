@@ -1,6 +1,7 @@
 .navbar-lewagon {
   background: black;
   transition: 0.5s background-color ease;
+  height: 6vh;
 }
 
 .container,
@@ -58,3 +59,7 @@ a {
    padding: 0px;
    padding-bottom: 6px;
  }
+
+.dropdown-menu .dropdown-menu-end .show {
+  background-color: rgba(0, 0, 0, 0.55);
+}
