@@ -1,44 +1,59 @@
 .card-container{
+  margin: auto;
   width: 100%;
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   // display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 10px;
-  grid-row-gap:10px;
-  padding-left: 10px;
-  padding-right: 10px;
+
   a{
     text-decoration: none;
-
   }
 }
 
 .receptacle-card{
-  width: 100%;
+  background-color: pink;
+  margin: 20px;
+  width: 25em;
+  height: 40em;
   display: flex;
   flex-direction: column;
-  img{
-    object-fit: cover;
-    height: 500px;
-    width: 100%;
-  }
-
-}
-.card-info{
-  display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
-  color: rgb(51, 109, 175);
-  background-color: white;
-  padding: 20px;
-
+  overflow: hidden;
+  border-radius: 30px;
+  background-size: cover;
   h2{
     font-style: normal;
     font-weight: 400;
     text-decoration: none;
     margin: 0;
-    font-size: 30px;
+    font-size: 2em;
     padding: 15px;
-    color: rgb(24, 24, 24);
-    }
+    color: white;
+    position: relative;
+    bottom: 35px;
+  }
+  h3{
+    font-style: normal;
+    font-weight: 400;
+    text-decoration: none;
+    margin: 0;
+    font-size: 1em;
+    padding: 15px;
+    color: white;
+    opacity: .7;
+  }
+}
+.card-head{
+  display: flex;
+  justify-content: left;
+  padding: 16px;
+  width: 100%;
+}
+.card-body{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 100%;
 }
