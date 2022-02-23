@@ -3,6 +3,10 @@
   border-radius: 50%;
   margin-left: 8px;
   color: white;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    color: gray;
+  }
 }
 .avatar-large {
   width: 56px;
