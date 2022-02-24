@@ -1,45 +1,58 @@
+<div class="showpage-container">
 
-    <h1><%= @receptacle.name %></h1>
 
-    <div>
-        <div class="show-card " style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)), url('<%= cl_image_path @receptacle.picture.key, height: 2000, width: 2000, crop: :fill %>')">
+        <div class="container-image-map">
+          <div class="container-flex">
+            <h1><%= @receptacle.name %></h1>
+            <div class="show-image" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)), url('<%= cl_image_path @receptacle.picture.key, height: 2000, width: 2000, crop: :fill %>')">
+            </div>
+            <div class="container-desc">
+            <p id="rec-desc"><%= @receptacle.description%></p>
+            <p><i class="fa-solid fa-money-check-dollar"></i> Price Per Day: €<%= number_with_delimiter(@receptacle.price_per_day, :delimiter => ",") %></p>
+            <p><i class="fa-solid fa-box-open"></i>  Capacity: <%= @receptacle.capacity %> L</p>
+            <p><i class="fa-solid fa-building"></i> <%= @receptacle.address %></p>
+            </div>
+          </div>
+
+            <div class="container-flex">
+              <div class="map-show" style="width: 600px; height: 400px; border-radius:30px;"
+                data-controller="mapbox"
+                data-mapbox-markers-value="<%= @markers.to_json %>"
+                data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+              </div>
+
+              <div class="container-book">
+                <div style="width: 450px; margin: 0;">
+                  <h2>Make a Booking</h2>
+                  <%= simple_form_for :search, method: "get" do |f| %>
+                  <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+                  <%= f.input :ends_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+                  <%= f.button :submit, "Go", class: "book-button" %>
+                  <% end %>
+                </div>
+              </div>
+
+            </div>
+
         </div>
 
-        <div class='rounded' style="width: 100%; height: 600px;"
-          data-controller="mapbox"
-          data-mapbox-markers-value="<%= @markers.to_json %>"
-          data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-        </div>
 
+        <div class="container-desc-book">
+
+
+
+
+      </div>
+
+    <div class=''>
+
+        <% if policy(@receptacle).update? %>
+          <%= link_to 'Edit', edit_receptacle_path(@receptacle), {class: 'log-in-button'} %>
+        <% end %>
+
+        <% if policy(@receptacle).destroy? %>
+          <%= link_to 'Delete', @receptacle, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
     </div>
 
-    <p><em><%= @receptacle.description%></em></p>
-    <p>Price Per Day: €<%= number_with_delimiter(@receptacle.price_per_day, :delimiter => ",") %></p>
-
-
-  <div class="">
-    <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
-      <h2>Make a Booking</h2>
-      <%= simple_form_for :search, method: "get" do |f| %>
-        <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-        <%= f.input :ends_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-        <%= f.button :submit, "Go", class: "btn btn-primary" %>
-      <% end %>
-    </div>
-  </div>
-
-  <div class=''>
-      <%= link_to 'Back', receptacles_path, {class: 'log-in-button'} %>
-
-      <% if policy(@receptacle).update? %>
-        <%= link_to 'Edit', edit_receptacle_path(@receptacle), {class: 'log-in-button'} %>
-      <% end %>
-
-      <% if policy(@receptacle).destroy? %>
-        <%= link_to 'Delete', @receptacle, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
-  </div>
-
-  <div>
-
-  </div>
+</div>

@@ -10,7 +10,7 @@
             <div class="card-body">
               <div class="card-info">
                 <h2><%= receptacle.name %></h2>
-                <h3>€<%= number_with_delimiter(receptacle.price_per_day, :delimiter => ",") %></h3>
+                <h3>€<%= number_with_delimiter(receptacle.price_per_day, :delimiter => ",") %> /day</h3>
               </div>
             </div>
           </div>
@@ -24,7 +24,7 @@
     width: 40%;
     height: 92vh;
     position: sticky;
-    top: 6vh;
+    top: 8vh;
     border-radius: 30px;"
     data-controller="mapbox"
     data-mapbox-markers-value="<%= @markers.to_json %>"
