@@ -4,8 +4,10 @@
         <div class="show-card " style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)), url('<%= cl_image_path @receptacle.picture.key, height: 2000, width: 2000, crop: :fill %>')">
           <p><em><%= @receptacle.description%></em></p>
           <p>Price Per Day: €<%= number_with_delimiter(@receptacle.price_per_day, :delimiter => ",") %></p>
+          <p>Tags: <%=@receptacle.tag_list%> </p>
         </div>
     </div>
+
 
 
 <div class="container">
@@ -25,8 +27,6 @@
 
 
     <div class='d-flex flex-row'>
-        <%= link_to 'Back', receptacles_path, {class: 'log-in-button'} %>
-
         <% if policy(@receptacle).update? %>
         <%= link_to 'Edit', edit_receptacle_path(@receptacle), {class: 'log-in-button regular'} %>
       <% end %>
