@@ -1,7 +1,8 @@
 .navbar-lewagon {
   background: black;
   transition: 0.5s background-color ease;
-  height: 6vh;
+  height: 8vh;
+  font-size: 22px;
 }
 
 .container,
@@ -44,6 +45,7 @@ a {
     padding: 0px;
     margin: 8px;
     transition: 0.3s ease-in-out;
+    text-align: end;
     &:hover {
       color: gray
     }
@@ -73,6 +75,11 @@ a {
 }
 
 .dropdown-item:hover, .dropdown-item:focus {
-  background-color: transparent !important;
+  background-color: transparent;
   color: gray;
+}
+
+.dropdown {
+  justify-content: end;
+  flex-direction: row-reverse;
 }
