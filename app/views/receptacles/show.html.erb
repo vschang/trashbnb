@@ -13,24 +13,24 @@
   </div>
 
 
-    <div class='d-flex flex-row'>
-        <%= link_to 'Back', receptacles_path, {class: 'log-in-button'} %>
+  <div class='d-flex flex-row'>
+      <%= link_to 'Back', receptacles_path, {class: 'log-in-button'} %>
 
-        <% if policy(@receptacle).update? %>
+      <% if policy(@receptacle).update? %>
         <%= link_to 'Edit', edit_receptacle_path(@receptacle), {class: 'log-in-button'} %>
-        <% end %>
+      <% end %>
 
-        <% if policy(@receptacle).destroy? %>
+      <% if policy(@receptacle).destroy? %>
         <%= link_to 'Delete', @receptacle, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <% end %>
-    </div>
+      <% end %>
+  </div>
 
-    <div>
-      <div class='rounded' style="width: 100%; height: 600px;"
-        data-controller="mapbox"
-        data-mapbox-markers-value="<%= @markers.to_json %>"
-        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
+  <div>
+    <div class='rounded' style="width: 100%; height: 600px;"
+      data-controller="mapbox"
+      data-mapbox-markers-value="<%= @markers.to_json %>"
+      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
+  </div>
 
 </div>
