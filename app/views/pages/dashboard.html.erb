@@ -1,1 +1,11 @@
 <h1>Welcome to your Trashboard Dashboard 🗑</h1>
+
+<h2>My Bookings</h2>
+<% @user.bookings.each do |booking| %>
+<%=booking.receptacle.name%>
+<%end%>
+
+<h2>My Receptacles for Offer</h2>
+<% @user.bookings.each do |booking| %>
+<%=booking.receptacle%>
+<%end%>
