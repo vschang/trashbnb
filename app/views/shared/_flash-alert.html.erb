@@ -1,0 +1,17 @@
+<% if notice %>
+<div class="flash flash-success alert alert-dismissible fade show" role="alert">
+  <p><strong>Yay!</strong> <%= notice %></p>
+  <a data-bs-dismiss="alert" aria-label="Close">
+    <i class="white-icon fas fa-times"></i>
+  </a>
+</div>
+<% end %>
+
+<% if alert %>
+<div class="flash  flash-danger alert alert-dismissible fade show" role="alert">
+  <p><strong>Oops!</strong> 😱 a problem has occurred while processing your booking</p>
+  <a data-bs-dismiss="alert" aria-label="Close">
+    <i class="white-icon fas fa-times"></i>
+  </a>
+</div>
+<% end %>

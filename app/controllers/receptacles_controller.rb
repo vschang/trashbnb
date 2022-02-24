@@ -20,6 +20,8 @@ class ReceptaclesController < ApplicationController
 
   def show
     @receptacle = Receptacle.find(params[:id])
+    @booking = Booking.new
+
     authorize @receptacle
     @markers =
     [{
