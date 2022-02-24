@@ -1,5 +1,6 @@
 class ReceptaclesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     @receptacles = policy_scope(Receptacle).order(created_at: :desc)
     @user = current_user
