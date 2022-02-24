@@ -1,7 +1,7 @@
 
-<%# <div class="receptacles-banner">
+<div class="receptacles-banner">
   <h1>Receptacles</h1>
-</div> %>
+</div>
   <div class="map-cards-container">
     <div class="card-container">
       <% @receptacles.each do |receptacle| %>
@@ -21,6 +21,7 @@
           <% end %>
         <% end %>
       </div>
+      
     <div class="map-section"style="width:700px; height: 700px;"
       data-controller="mapbox"
       data-mapbox-markers-value="<%= @markers.to_json %>"
