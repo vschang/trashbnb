@@ -5,35 +5,14 @@
   <% if user_signed_in? == false %>
   <%= link_to "Log In", new_user_session_path, class: "log-in-button" %>
   <% else %>
-<<<<<<< HEAD
   <%= link_to "See all our Receptacles", receptacles_path, class: "log-in-button" %>
-=======
-  <%= link_to "Get to your Dashboard", dashboard_path, class: "log-in-button" %>
->>>>>>> master
   <% end %>
 </div>
-
-<div class="container home-card-window">
-  <div class="row">
-    <div class="col-sm home-card">
-      One of two columns
-    </div>
-    <div class="col-sm home-card">
-      One of two columns
-    </div>
+<div id="about-us">
+  <div class="about-title">
+    <h2>About Us</h2>
   </div>
-</div>
-
-<div class="map-cards-container">
-  <div class="card-container">
-    <div class="receptacle-card" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)), url('garbage-men.jpg')">
-            <div class="card-head">
-              <h3>€</h3>
-            </div>
-            <div class="card-body" class56cc  >
-                <h2>About Us</h2>
-              </div>
-             </div>
-      </div>
-    </div>
+  <div class="about-content">
+    <p>"All of this trash, and I don't know where to put it!" is what most of our clients say when they come to us, Trashi is here to help you remove whatever you don't need at your home, after a party or any sort of event. Whether you need a small receptacle, like a boring trashcan... <strong>OR</strong> a <strong><em>Supermassive Black Hole</em></strong> to throw and inifinite amount of trash!, any size for your needs. Also, got one receptacle of your own? upload it and make an income out of it, find our more about our services on your 'Trashboard'(Dashboard).</p>
+  </div>
 </div>

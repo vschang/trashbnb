@@ -85,3 +85,24 @@
     margin: 0;
   }
 }
+
+#about-us{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  height: 60vh;
+  background-size: cover;
+  color: white;
+  height: 50vh;
+  // background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('garbage-men.jpg');
+}
+
+.about-title {
+
+}
+
+.about-content {
+  width: 70%;
+  text-align: end;
+}
