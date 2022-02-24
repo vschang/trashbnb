@@ -5,14 +5,21 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.user = current_user
     @booking.receptacle = @receptacle
+    @booking.total_price = total_price
+
     if @booking.save
-      redirect_to receptacle_path(@receptacle), notice: "Your booking was a success!"
+      redirect_to receptacle_path(@receptacle), notice: "You have created a booking!"
     else
       render "receptacles/show"
     end
   end
 
   private
+
+  def total_price
+    days = (@booking.end_date - @booking.start_date).to_i
+    (days * @receptacle.price_per_day).to_i
+  end
 
   def booking_params
     params.require(:booking).permit(:start_date, :end_date, :receptacle_id)
