@@ -1,5 +1,3 @@
-<div class ='d-flex flex-column'>
-  <div class='d-flex flex-row mt-4 mt-5 mb-4'>
 
     <div>
       <h1><%= @receptacle.name %></h1>
@@ -8,37 +6,36 @@
           <p>Price Per Day: €<%= number_with_delimiter(@receptacle.price_per_day, :delimiter => ",") %></p>
         </div>
     </div>
+
+
+  <div class="container">
+    <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+      <h2>Make a Booking</h2>
+      <%= simple_form_for :search, method: "get" do |f| %>
+        <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.input :ends_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.button :submit, "Go", class: "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
 
-<div class="container">
-  <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
-    <h2>Make a Booking</h2>
-    <%= simple_form_for :search, method: "get" do |f| %>
-      <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.input :ends_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.button :submit, "Go", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-</div>
+  <div class='d-flex flex-row'>
+      <%= link_to 'Back', receptacles_path, {class: 'log-in-button'} %>
 
-    <div class='d-flex flex-row'>
-        <%= link_to 'Back', receptacles_path, {class: 'log-in-button'} %>
-
-        <% if policy(@receptacle).update? %>
+      <% if policy(@receptacle).update? %>
         <%= link_to 'Edit', edit_receptacle_path(@receptacle), {class: 'log-in-button'} %>
-        <% end %>
+      <% end %>
 
-        <% if policy(@receptacle).destroy? %>
+      <% if policy(@receptacle).destroy? %>
         <%= link_to 'Delete', @receptacle, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <% end %>
-    </div>
+      <% end %>
+  </div>
 
-    <div>
-      <div class='rounded' style="width: 100%; height: 600px;"
-        data-controller="mapbox"
-        data-mapbox-markers-value="<%= @markers.to_json %>"
-        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
+  <div>
+    <div class='rounded' style="width: 100%; height: 600px;"
+      data-controller="mapbox"
+      data-mapbox-markers-value="<%= @markers.to_json %>"
+      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
+  </div>
 
-</div>
