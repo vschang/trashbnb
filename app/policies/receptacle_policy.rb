@@ -19,6 +19,6 @@ class ReceptaclePolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.user == user  # Only receptacle creator can update it
+    record.user == user  # Only receptacle creator can destroy it
   end
 end
