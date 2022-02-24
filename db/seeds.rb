@@ -91,4 +91,100 @@ file = URI.open('https://imageio.forbes.com/blogs-images/startswithabang/files/2
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
 receptacle.save
 
+receptacle = Receptacle.new(
+  name: 'Golden Trashcan',
+  capacity: 20,
+  price_per_day: 100,
+  address: 'C. de la Isla de Java, 2, 28034 Madrid',
+  description: 'Have your trash feel like royalty. Enjoy our premium 24k gold trash can. Fit for a king!',
+  user: muffin_man
+)
+file = URI.open('https://ae01.alicdn.com/kf/H356a139e791e43d4b5759e6497ba9944m/Stainless-Steel-Trash-Can-Shake-Cover-Home-Bathroom-Kitchen-Living-Room-Flip-Light-Luxury-with-Cover.jpg_Q90.jpg_.webp')
+receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
+receptacle.save
+
+receptacle = Receptacle.new(
+  name: 'Wicker Trashcan',
+  capacity: 20,
+  price_per_day: 10,
+  address: 'C. Agustín de Iturbide, 1, 28043 Madrid',
+  description: 'Feeling tropical? Try our wicker trashcan. It\'s properties include UV and water resistance. Your trash will enjoy soaking up the sun in paradise.',
+  user: muffin_man
+)
+file = URI.open('https://im-7.eefa.co/clf-co7306-wb-rs-e1-s7.jpg')
+receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
+receptacle.save
+
+receptacle = Receptacle.new(
+  name: 'A Deep Pit',
+  capacity: 4_000,
+  price_per_day: 5,
+  address: 'C. de Apolonio Morales, 3, 28036 Madrid',
+  description: 'Want to forget about your trash forever? Throw it into a deep dark pit. Feel the relief of releasing a burden worth 4,000L of trash.',
+  user: muffin_man
+)
+file = URI.open('https://lbc.ac.uk/wp-content/uploads/2019/12/Dvar1-1.jpg')
+receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
+receptacle.save
+
+receptacle = Receptacle.new(
+  name: 'The Suburban Dream',
+  capacity: 35,
+  price_per_day: 15,
+  address: 'Av. de Filipinas, 28003 Madrid',
+  description: 'Want your trash to live the American Dream? Try the Suburban dream. Your trash will enjoy the luxury of living the classic American life in the suburbs. The experience includes soccer moms, massive SUV cars, and green lawns. Best for Fourth of July celebrations.',
+  user: muffin_man
+)
+file = URI.open('https://ejharrison.com/wp-content/uploads/2021/11/Thanksgiving_holiday_banner_ej_harrison_blog_post_header.webp')
+receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
+receptacle.save
+
+receptacle = Receptacle.new(
+  name: 'Baby Blue',
+  capacity: 87,
+  price_per_day: 35,
+  address: 'C. de Ferraz, 38, 28008 Madrid',
+  description: 'A standard trash can in a beautiful baby blue color. Pretty standard but the color is cute.',
+  user: muffin_man
+)
+file = URI.open('https://img-new.cgtrader.com/items/927741/3577521ad0/large/light-blue-trash-bin-with-two-wheels-3d-model-max-obj-3ds-c4d-lwo-lw-lws-ma-mb.jpg')
+receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
+receptacle.save
+
+receptacle = Receptacle.new(
+  name: 'Beautiful Japanese Trash Can',
+  capacity: 20,
+  price_per_day: 168,
+  address: 'C. Sepúlveda, 3, 28011 Madrid',
+  description: 'This beautiful Japanese trash can frequently sells out from domestic vendors, so at the moment it has to be ordered from abroad. The bin is constructed of forms distilled down to the essences of function: a simple cylindrical polymer vessel and a swinging wood-veneer top. It\'s 17-inches tall, which makes it useful in the bathroom and beyond.',
+  user: muffin_man
+)
+file = URI.open('https://pyxis.nymag.com/v1/imgs/6c9/3fd/ea37665e17eb362fb0ca4a76d181e63a06.2x.rsquare.w600.jpg')
+receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
+receptacle.save
+
+receptacle = Receptacle.new(
+  name: 'Burning Metal Trashcan',
+  capacity: 100,
+  price_per_day: 20,
+  address: 'Gta. de las Pirámides, 1, 28005 Madrid',
+  description: 'Need to get rid of sensitive documents? Want to ensure your trash (secrets) is wiped forever from the face of the earth? Want to stay warm in the winter? Choose our Burning Metal Trashcan, perfect for any of your heating or trash management needs. Similar to Dumpster on Fire but with a smaller capacity.',
+  user: muffin_man
+)
+file = URI.open('https://yardblogger.com/wp-content/uploads/2021/02/neighbors-burning-trash.jpg')
+receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
+receptacle.save
+
+receptacle = Receptacle.new(
+  name: 'The Beach',
+  capacity: 100_000,
+  price_per_day: 200,
+  address: 'Calle Fuenterrabía, 2, 28014 Madrid',
+  description: 'Don\'t give a damn about the turtles? Love to use plastic straws? Hate the fact that paper straws disentegrate in a matter of seconds? Throw your trash on the beach. Don\'t worry. There are always people volunteering to clean it up.',
+  user: muffin_man
+)
+file = URI.open('https://hakaimagazine.com/wp-content/uploads/aacs_banner.jpg')
+receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
+receptacle.save
+
 p "Finished Seeding!"
