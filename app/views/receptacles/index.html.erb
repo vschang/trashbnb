@@ -1,5 +1,13 @@
 <div class="map-cards-container">
 
+<%# <div>
+<p class='log-in-button regular'>Tiny</p>
+<p class='log-in-button regular'>Small</p>
+<p class='log-in-button regular'>Medium</p>
+<p class='log-in-button regular'>A lot</p>
+<p class='log-in-button regular'>Infinte</p>
+</div> %>
+
   <div class="card-container">
     <% @receptacles.each do |receptacle| %>
       <% if policy(receptacle).show?%>

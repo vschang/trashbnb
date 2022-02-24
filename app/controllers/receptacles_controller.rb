@@ -16,6 +16,12 @@ class ReceptaclesController < ApplicationController
         image_url: helpers.asset_url("red trash.png")
       }
     end
+
+    # @receptacles = Receptacle.tagged_with(["Tiny"], :any => true)
+    # @receptacles = Receptacle.tagged_with(["Small"], :any => true)
+    # @receptacles = Receptacle.tagged_with(["Medium"], :any => true)
+    # @receptacles = Receptacle.tagged_with(["A lot"], :any => true)
+    # @receptacles = Receptacle.tagged_with(["Infinite"], :any => true)
   end
 
   def show
@@ -73,6 +79,6 @@ class ReceptaclesController < ApplicationController
   private
 
   def receptacle_params
-    params.require(:receptacle).permit(:name, :picture, :capacity, :price_per_day, :address, :description)
+    params.require(:receptacle).permit(:name, :picture, :capacity, :price_per_day, :address, :description, :tag_list)
   end
 end

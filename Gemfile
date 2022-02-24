@@ -8,6 +8,8 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 gem 'rails', '~> 6.1.4', '>= 6.1.4.6'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
+gem 'acts-as-taggable-on', '~> 9.0'
+
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
@@ -36,7 +38,6 @@ gem 'simple_form'
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
-  gem 'dotenv-rails'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

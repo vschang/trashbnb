@@ -7,6 +7,7 @@ class Receptacle < ApplicationRecord
   validates :capacity, presence: true
   validates :address, presence: true
   validates :description, presence: true
+  acts_as_taggable_on :tags
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
