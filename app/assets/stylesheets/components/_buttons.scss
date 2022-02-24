@@ -1,5 +1,5 @@
 .log-in-button{
-  padding: 10px 20px;
+  padding: 10px 30px;
   background-color: white;
   color: gray;
   text-decoration: none;
@@ -17,4 +17,12 @@
   a{
     color: white;
   }
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
 }

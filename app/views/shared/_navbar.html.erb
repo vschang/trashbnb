@@ -5,8 +5,20 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <i class="fa-solid fa-bars toggler"></i>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="searchbar">
+      <%= form_tag receptacles_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a Receptacle"
+        %>
+        <%= button_tag(type: "submit", class: "link-button") do %>
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <% end %>
+      <% end %>
+    </div>
       <ul class="navbar-nav me-auto">
             <%= link_to "Receptacles", receptacles_path, class: "nav-link" %>
         <% if user_signed_in? %>
