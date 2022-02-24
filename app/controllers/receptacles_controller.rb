@@ -15,6 +15,13 @@ class ReceptaclesController < ApplicationController
   def show
     @receptacle = Receptacle.find(params[:id])
     authorize @receptacle
+    @markers =
+    [{
+        lat: @receptacle.latitude,
+        lng: @receptacle.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { receptacle: @receptacle }),
+        image_url: helpers.asset_url("trash_map_icon.png")
+      }]
   end
 
   def new
