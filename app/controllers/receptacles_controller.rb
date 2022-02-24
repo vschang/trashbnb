@@ -2,8 +2,12 @@ class ReceptaclesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @receptacles = policy_scope(Receptacle).order(created_at: :desc)
     @user = current_user
+    if params[:query].present?
+      @receptacles = policy_scope(Receptacle).global_search(params[:query])
+    else
+      @receptacles = policy_scope(Receptacle).order(created_at: :desc)
+    end
     @markers = @receptacles.geocoded.map do |receptacle|
       {
         lat: receptacle.latitude,
@@ -12,10 +16,18 @@ class ReceptaclesController < ApplicationController
         image_url: helpers.asset_url("red trash.png")
       }
     end
+
+    # @receptacles = Receptacle.tagged_with(["Tiny"], :any => true)
+    # @receptacles = Receptacle.tagged_with(["Small"], :any => true)
+    # @receptacles = Receptacle.tagged_with(["Medium"], :any => true)
+    # @receptacles = Receptacle.tagged_with(["A lot"], :any => true)
+    # @receptacles = Receptacle.tagged_with(["Infinite"], :any => true)
   end
 
   def show
     @receptacle = Receptacle.find(params[:id])
+    @booking = Booking.new
+
     authorize @receptacle
     @markers =
     [{
@@ -67,6 +79,6 @@ class ReceptaclesController < ApplicationController
   private
 
   def receptacle_params
-    params.require(:receptacle).permit(:name, :picture, :capacity, :price_per_day, :address, :description)
+    params.require(:receptacle).permit(:name, :picture, :capacity, :price_per_day, :address, :description, :tag_list)
   end
 end

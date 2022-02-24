@@ -1,0 +1,27 @@
+.flash {
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 30px;
+
+  p{
+    margin: 0px;
+    padding: 5px;
+    color: white;
+    font-size: 16px
+  }
+}
+
+.white-icon{
+  color: white;
+}
+
+.flash-success {
+  border: 2px solid #1EDD88;
+}
+
+.flash-danger {
+  border: 2px solid #FD1015;
+}

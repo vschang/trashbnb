@@ -87,3 +87,22 @@ a {
   justify-content: end;
   flex-direction: row-reverse;
 }
+
+.searchbar form {
+  display: flex;
+  color: white;
+  align-items: center;
+}
+
+.fa-magnifying-glass:before,.fa-search:before {
+  content: "\f002";
+  margin-left: 12px;
+  margin-right: 6px;
+}
+
+.form-control {
+  background-color: black;
+  border-radius: 30px !important;
+  border-width: initial;
+  font-family: 'SF Pro Display', sans-serif;
+}

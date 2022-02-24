@@ -1,1 +1,21 @@
 <h1>Welcome to your Trashboard Dashboard 🗑</h1>
+<div class='d-flex flex-row justify-content-around'>
+  <div>
+    <h2>My Bookings</h2>
+    <% @user.bookings.each do |booking| %>
+    <h2><%=booking.receptacle.name%></h2>
+    <img src='<%= cl_image_path booking.receptacle.picture.key, height: 500, width: 500, crop: :fill %>' >
+    <p>Your booking dates: <%=booking.start_date.strftime("%B %d")%> - <%=booking.end_date.strftime("%B %d, %Y")%></p>
+    <p>Total price:<%=booking.total_price%> €</p>
+    <%end%>
+  </div>
+  <div>
+    <h2>My Receptacles for Offer</h2>
+    <% @receptacles.each do |receptacle| %>
+    <p><%=receptacle.name%></p>
+    <img src='<%= cl_image_path receptacle.picture.key, height: 500, width: 500, crop: :fill %>' >
+    <p>Price Per Day: <%= number_with_delimiter(receptacle.price_per_day, :delimiter => ",") %>€</p>
+    <p>Capacity: <%= number_with_delimiter(receptacle.capacity, :delimiter => ",") %>L</p>
+    <%end%>
+  </div>
+</div>

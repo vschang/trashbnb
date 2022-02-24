@@ -13,12 +13,13 @@
   color: white;
   height: 100vh;
   h1 {
-    font-size: 35vw;
+    font-size: 24vw;
     margin-bottom: -5%;
-    margin-top: -131px;
+    margin-top: -113px;
   }
   h2 {
     margin: 0px;
+    font-size: 4vw;
   }
 }
 
@@ -95,10 +96,98 @@
   background-size: cover;
   color: white;
   height: 50vh;
-  // background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('garbage-men.jpg');
+  margin-top: 20;
+}
+
+#about-us {
+  background: linear-gradient(48deg, #e8005a, #00e8d5);
+  background-size: 400% 400%;
+
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 96%
+  }
+
+  50% {
+    background-position: 100% 5%
+  }
+
+  100% {
+    background-position: 0% 96%
+  }
+}
+
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 0% 96%
+  }
+
+  50% {
+    background-position: 100% 5%
+  }
+
+  100% {
+    background-position: 0% 96%
+  }
+}
+
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 96%
+  }
+
+  50% {
+    background-position: 100% 5%
+  }
+
+  100% {
+    background-position: 0% 96%
+  }
 }
 
 .about-content {
   width: 70%;
+  max-height: 40vh;
   text-align: end;
+  font-size: 33px;
+}
+
+#how-we-work {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  padding: 30px;
+  height: 60vh;
+  background-size: cover;
+  color: white;
+  height: 50vh;
+  margin-top: 20;
+  // background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('garbage-men.jpg');
+}
+
+.howto-content {
+  width: 70%;
+  max-height: 40vh;
+  text-align: start;
+  font-size: 33px;
+}
+
+.about-title {
+  h2{
+  font-size: 4rem;
+
+  }
+}
+
+.howto-title {
+  h2{
+  font-size: 4rem;
+  text-align: end;
+  }
 }

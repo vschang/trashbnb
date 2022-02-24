@@ -9,6 +9,7 @@
             <div class="container-desc">
             <p id="rec-desc"><%= @receptacle.description%></p>
             <p><i class="fa-solid fa-money-check-dollar"></i> Price Per Day: €<%= number_with_delimiter(@receptacle.price_per_day, :delimiter => ",") %></p>
+            <p>Tags: <%=@receptacle.tag_list%> </p>
             <p><i class="fa-solid fa-box-open"></i>  Capacity: <%= @receptacle.capacity %> L</p>
             <p><i class="fa-solid fa-building"></i> <%= @receptacle.address %></p>
             </div>
@@ -24,7 +25,7 @@
               <div class="container-book">
                 <div style="width: 450px; margin: 0;">
                   <h2>Make a Booking</h2>
-                  <%= simple_form_for :search, method: "get" do |f| %>
+                  <%= simple_form_for @booking do |f| %>
                   <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
                   <%= f.input :ends_date, as: :string, required: false, input_html: {class: "datepicker"} %>
                   <%= f.button :submit, "Go", class: "book-button" %>
