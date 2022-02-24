@@ -13,9 +13,9 @@
   color: white;
   height: 100vh;
   h1 {
-    margin: 0px;
-    font-size: 400px;
-    margin-bottom: -64px;
+    font-size: 35vw;
+    margin-bottom: -5%;
+    margin-top: -131px;
   }
   h2 {
     margin: 0px;
@@ -84,4 +84,21 @@
     font-style: normal;
     margin: 0;
   }
+}
+
+#about-us{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  height: 60vh;
+  background-size: cover;
+  color: white;
+  height: 50vh;
+  // background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('garbage-men.jpg');
+}
+
+.about-content {
+  width: 70%;
+  text-align: end;
 }

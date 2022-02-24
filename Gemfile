@@ -72,3 +72,6 @@ gem 'pundit'
 
 # geocoding
 gem "geocoder"
+
+# pg_seach
+gem 'pg_search', '~> 2.3.0'
