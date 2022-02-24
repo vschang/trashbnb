@@ -31,21 +31,11 @@
                   <% end %>
                 </div>
               </div>
-
             </div>
-
         </div>
-
-
         <div class="container-desc-book">
-
-
-
-
       </div>
-
     <div class=''>
-
         <% if policy(@receptacle).update? %>
           <%= link_to 'Edit', edit_receptacle_path(@receptacle), {class: 'log-in-button'} %>
         <% end %>
@@ -54,5 +44,4 @@
           <%= link_to 'Delete', @receptacle, method: :delete, data: { confirm: 'Are you sure?' } %>
         <% end %>
     </div>
-
 </div>
