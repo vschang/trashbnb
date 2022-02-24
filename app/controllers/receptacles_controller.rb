@@ -7,7 +7,7 @@ class ReceptaclesController < ApplicationController
         lat: receptacle.latitude,
         lng: receptacle.longitude,
         info_window: render_to_string(partial: "info_window", locals: { receptacle: receptacle }),
-        image_url: helpers.asset_url("trash_map_icon.png")
+        image_url: helpers.asset_url("red trash.png")
       }
     end
   end
