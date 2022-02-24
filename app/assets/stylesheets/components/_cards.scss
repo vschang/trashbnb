@@ -15,7 +15,7 @@
 .receptacle-card{
   background-color: pink;
   margin: 20px 20px;
-  width: 400px;
+  width: 370px;
   height: 700px;
   display: flex;
   flex-direction: column;
@@ -83,7 +83,7 @@
   }
   h3{
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     text-decoration: none;
     margin: 0;
     font-size: 1em;
@@ -91,13 +91,15 @@
     color: white;
     opacity: .7;
   }
+}
 .map-cards-container{
   display: flex;
-
+  margin: 0px 20px;
 }
 .map-section{
   position: sticky;
   margin-top: 20px;
   top: 6vh;
   border-radius: 30px;
-}
+ }
+

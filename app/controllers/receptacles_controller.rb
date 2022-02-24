@@ -1,13 +1,14 @@
 class ReceptaclesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @receptacles = policy_scope(Receptacle).order(created_at: :desc)
-
+    @user = current_user
     @markers = @receptacles.geocoded.map do |receptacle|
       {
         lat: receptacle.latitude,
         lng: receptacle.longitude,
         info_window: render_to_string(partial: "info_window", locals: { receptacle: receptacle }),
-        image_url: helpers.asset_url("trash_map_icon.png")
+        image_url: helpers.asset_url("red trash.png")
       }
     end
   end
@@ -15,6 +16,11 @@ class ReceptaclesController < ApplicationController
   def show
     @receptacle = Receptacle.find(params[:id])
     authorize @receptacle
+
+    @markers = [{ lat: @receptacle.latitude,
+                  lng: @receptacle.longitude,
+                  image_url: helpers.asset_url("red trash.png"),
+                  info_window: render_to_string(partial: "info_window", locals: { receptacle: @receptacle }) }]
   end
 
   def new

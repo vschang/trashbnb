@@ -3,12 +3,18 @@
   background-color: white;
   color: gray;
   text-decoration: none;
-  border-radius: 16px;
+  border-radius: 32px;
   transition: 0.3s ease-in-out;
-  margin: 85px;
+  margin-top: 85px;
   font-family: 'SF Pro Display', sans-serif;
+  font-size: 33px;
   &:hover {
     color: white;
     background-color: black;
+  }
+}
+.form-actions{
+  a{
+    color: white;
   }
 }
