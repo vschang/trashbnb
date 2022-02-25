@@ -63,4 +63,28 @@
   }
 }
 
-
+.dashboard-card{
+  margin: 20px 10px 20px 10px;
+  width: 600px;
+  padding: 51px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  background-color: #3a3a3aa1;
+  border-radius: 30px;
+  img{
+    border-radius: 30px;
+    object-fit: cover;
+  }
+  h3{
+    font-size: 30px;
+    color: white;
+    text-align: left;
+    padding-left: 10px;
+  }
+}
+.dashboard-title{
+  font-size: 50px;
+}
