@@ -2,11 +2,17 @@ class ReceptaclesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
+    @tag_list = ["Tiny","Small","Medium","A lot","Infinite"]
     @user = current_user
     if params[:query].present?
       @receptacles = policy_scope(Receptacle).global_search(params[:query])
     else
-      @receptacles = policy_scope(Receptacle).order(created_at: :desc)
+      if params[:tag].present?
+        @receptacles = policy_scope(Receptacle).tagged_with(params[:tag])
+        @message = "No Results" unless @receptacles.present?
+      else
+        @receptacles = policy_scope(Receptacle)
+      end
     end
     @markers = @receptacles.geocoded.map do |receptacle|
       {
@@ -18,23 +24,6 @@ class ReceptaclesController < ApplicationController
     end
   end
 
-  def tagged
-    @user = current_user
-    if params[:tag].present?
-      @receptacles = Receptacle.tagged_with(params[:tag])
-      @markers = @receptacles.geocoded.map do |receptacle|
-        {
-          lat: receptacle.latitude,
-          lng: receptacle.longitude,
-          info_window: render_to_string(partial: "info_window", locals: { receptacle: receptacle }),
-          image_url: helpers.asset_url("red trash.png")
-        }
-      end
-      render :index
-    else
-      redirect_to receptacles_path
-    end
-  end
 
   def show
     @receptacle = Receptacle.find(params[:id])

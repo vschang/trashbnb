@@ -63,4 +63,14 @@
   }
 }
 
+.tag-bar{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
 
+.tags-cards-container{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
