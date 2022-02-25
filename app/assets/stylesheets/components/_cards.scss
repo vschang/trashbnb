@@ -62,12 +62,31 @@
   }
 }
 
-
 .tag-bar{
   width: 100%;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
+  background-color: #3a3a3aa1;
+  border-radius: 30px;
+  height: 40px;
+  a{
+    margin: 0;
+    text-align: center;
+    flex-grow: 1;
+    color: rgb(255, 255, 255);
+    padding: 0px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 20px;
+    &:hover{
+      height: 80%;
+    }
+  }
 }
+
 
 .tags-cards-container{
   display: flex;
