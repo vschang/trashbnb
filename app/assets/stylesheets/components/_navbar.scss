@@ -101,8 +101,10 @@ a {
 }
 
 .form-control {
-  background-color: black;
   border-radius: 30px !important;
   border-width: initial;
   font-family: 'SF Pro Display', sans-serif;
+}
+.mapboxgl-ctrl, .form-select{
+  border-radius: 30px !important;
 }

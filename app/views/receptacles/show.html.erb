@@ -7,11 +7,20 @@
             <div class="show-image" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)), url('<%= cl_image_path @receptacle.picture.key, height: 2000, width: 2000, crop: :fill %>')">
             </div>
             <div class="container-desc">
-            <p id="rec-desc"><%= @receptacle.description%></p>
-            <p><i class="fa-solid fa-money-check-dollar"></i> Price Per Day: €<%= number_with_delimiter(@receptacle.price_per_day, :delimiter => ",") %></p>
-            <p>Tags: <%=@receptacle.tag_list%> </p>
-            <p><i class="fa-solid fa-box-open"></i>  Capacity: <%= @receptacle.capacity %> L</p>
-            <p><i class="fa-solid fa-building"></i> <%= @receptacle.address %></p>
+              <p class="rec-desc"><%= @receptacle.description%></p>
+              <p><i class="fa-solid fa-money-check-dollar"></i> Price Per Day: €<%= number_with_delimiter(@receptacle.price_per_day, :delimiter => ",") %></p>
+              <p>Tags: <%=@receptacle.tag_list%> </p>
+              <p><i class="fa-solid fa-box-open"></i>  Capacity: <%= @receptacle.capacity %> L</p>
+              <p class="rec-desc"><i class="fa-solid fa-building"></i> <%= @receptacle.address %></p>
+              <div class='options-show'>
+                  <% if policy(@receptacle).update? %>
+                    <%= link_to 'Edit', edit_receptacle_path(@receptacle)%>
+                  <% end %>
+
+                  <% if policy(@receptacle).destroy? %>
+                    <%= link_to 'Delete', @receptacle, method: :delete, data: { confirm: 'Are you sure?' } %>
+                  <% end %>
+              </div>
             </div>
           </div>
 
@@ -36,13 +45,6 @@
         </div>
         <div class="container-desc-book">
       </div>
-    <div class=''>
-        <% if policy(@receptacle).update? %>
-          <%= link_to 'Edit', edit_receptacle_path(@receptacle), {class: 'log-in-button'} %>
-        <% end %>
 
-        <% if policy(@receptacle).destroy? %>
-          <%= link_to 'Delete', @receptacle, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <% end %>
-    </div>
+
 </div>
