@@ -19,18 +19,22 @@ class ReceptaclesController < ApplicationController
   end
 
   def tagged
+    @user = current_user
     if params[:tag].present?
-      @receptacles = Receptacles.tagged_with(params[:tag])
+      @receptacles = Receptacle.tagged_with(params[:tag])
+      @markers = @receptacles.geocoded.map do |receptacle|
+        {
+          lat: receptacle.latitude,
+          lng: receptacle.longitude,
+          info_window: render_to_string(partial: "info_window", locals: { receptacle: receptacle }),
+          image_url: helpers.asset_url("red trash.png")
+        }
+      end
+      render :index
     else
-      @receptacles = Receptacle.all
+      redirect_to receptacles_path
     end
   end
-
-    # @receptacles = Receptacle.tagged_with(["Tiny"], :any => true)
-    # @receptacles = Receptacle.tagged_with(["Small"], :any => true)
-    # @receptacles = Receptacle.tagged_with(["Medium"], :any => true)
-    # @receptacles = Receptacle.tagged_with(["A lot"], :any => true)
-    # @receptacles = Receptacle.tagged_with(["Infinite"], :any => true)
 
   def show
     @receptacle = Receptacle.find(params[:id])
@@ -53,6 +57,7 @@ class ReceptaclesController < ApplicationController
 
   def create
     @user = current_user
+    raise
     @receptacle = Receptacle.new(receptacle_params)
     authorize @receptacle
 

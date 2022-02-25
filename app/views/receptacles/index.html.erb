@@ -1,5 +1,23 @@
 <div class="map-cards-container">
 
+<div>
+  <form method="get" action="tagged">
+    <p>
+      <input name="tag" value="Tiny">
+    </p>
+    <input type="submit" value="Tiny">
+  </form>
+
+
+
+  <%# <p class='log-in-button regular'>Tiny</p>
+  <p class='log-in-button regular'>Small</p>
+  <p class='log-in-button regular'>Medium</p>
+  <p class='log-in-button regular'>A lot</p>
+  <p class='log-in-button regular'>Infinite</p> %>
+</div>
+
+
 <% @receptacles.each do |p| %>
 <h2><%= p.name %></h2>
 <div class="tags">
@@ -13,7 +31,8 @@
     <% @receptacles.each do |receptacle| %>
       <% if policy(receptacle).show?%>
         <%= link_to receptacle do%>
-          <div class="receptacle-card" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)), url('<%= cl_image_path receptacle.picture.key, height: 2000, width: 2000, crop: :fill %>)">
+           <%# <div class="receptacle-card" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)), url('<%= cl_image_path receptacle.picture.key, height: 2000, width: 2000, crop: :fill %>
+           <%# )"> %>
             <div class="card-body">
               <div class="card-info">
                 <h2><%= receptacle.name %></h2>
