@@ -1,11 +1,11 @@
 .avatar {
-  width: 35px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   margin-left: 8px;
-  color: white;
   transition: 0.3s ease-in-out;
   &:hover {
-    color: gray;
+    opacity: 0.3;
   }
 }
 .avatar-large {
@@ -32,4 +32,13 @@
 .dropdown {
   display:flex;
   align-items: center;
+}
+
+.user-profile {
+  img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+  }
 }

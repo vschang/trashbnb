@@ -46,7 +46,6 @@ class ReceptaclesController < ApplicationController
 
   def create
     @user = current_user
-    raise
     @receptacle = Receptacle.new(receptacle_params)
     authorize @receptacle
 
