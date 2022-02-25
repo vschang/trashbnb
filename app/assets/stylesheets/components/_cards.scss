@@ -62,11 +62,17 @@
   }
 }
 
-
 .tag-bar{
   width: 100%;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
+  background-color: white;
+  border-radius: 30px;
+  a{
+    color:black;
+    padding: 0px 10px;
+  }
 }
 
 .tags-cards-container{
