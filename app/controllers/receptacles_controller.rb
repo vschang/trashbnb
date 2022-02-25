@@ -16,13 +16,21 @@ class ReceptaclesController < ApplicationController
         image_url: helpers.asset_url("red trash.png")
       }
     end
+  end
+
+  def tagged
+    if params[:tag].present?
+      @receptacles = Receptacles.tagged_with(params[:tag])
+    else
+      @receptacles = Receptacle.all
+    end
+  end
 
     # @receptacles = Receptacle.tagged_with(["Tiny"], :any => true)
     # @receptacles = Receptacle.tagged_with(["Small"], :any => true)
     # @receptacles = Receptacle.tagged_with(["Medium"], :any => true)
     # @receptacles = Receptacle.tagged_with(["A lot"], :any => true)
     # @receptacles = Receptacle.tagged_with(["Infinite"], :any => true)
-  end
 
   def show
     @receptacle = Receptacle.find(params[:id])
