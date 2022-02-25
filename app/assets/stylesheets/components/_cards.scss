@@ -63,6 +63,18 @@
   }
 }
 
+
+.tag-bar{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tags-cards-container{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+
 .dashboard-card{
   margin: 20px 10px 20px 10px;
   width: 600px;
@@ -87,4 +99,5 @@
 }
 .dashboard-title{
   font-size: 50px;
+
 }

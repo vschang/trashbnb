@@ -1,50 +1,36 @@
 <div class="map-cards-container">
+  <div class="tags-cards-container">
+    <div class="tag-bar">
+      <%= link_to "All", receptacles_path%>
+      <% @tag_list.each do |tag| %>
+        <%= link_to tag, receptacles_path(tag: tag)%>
+      <% end %>
+    </div>
 
-<div>
-  <form method="get" action="tagged">
-    <p>
-      <input name="tag" value="Tiny">
-    </p>
-    <input type="submit" value="Tiny">
-  </form>
+    <%= @message %>
 
-
-
-  <%# <p class='log-in-button regular'>Tiny</p>
-  <p class='log-in-button regular'>Small</p>
-  <p class='log-in-button regular'>Medium</p>
-  <p class='log-in-button regular'>A lot</p>
-  <p class='log-in-button regular'>Infinite</p> %>
-</div>
-
-
-<% @receptacles.each do |p| %>
-<h2><%= p.name %></h2>
-<div class="tags">
-  <% p.tag_list.each do |t| %>
-    <%= link_to t, tagged_path(tag: t) %>
-  <% end %>
-</div>
-
-<% end %>
-  <div class="card-container">
-    <% @receptacles.each do |receptacle| %>
-      <% if policy(receptacle).show?%>
-        <%= link_to receptacle do%>
-           <%# <div class="receptacle-card" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)), url('<%= cl_image_path receptacle.picture.key, height: 2000, width: 2000, crop: :fill %>
-           <%# )"> %>
-            <div class="card-body">
-              <div class="card-info">
-                <h2><%= receptacle.name %></h2>
-                <h3>€<%= number_with_delimiter(receptacle.price_per_day, :delimiter => ",") %> /day</h3>
+    <div class="card-container">
+      <% @receptacles.each do |receptacle| %>
+        <% if policy(receptacle).show?%>
+          <%= link_to receptacle do%>
+            <div class="receptacle-card" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)), url('<%= cl_image_path receptacle.picture.key, height: 2000, width: 2000, crop: :fill %>')">
+              <div class="card-body">
+                <div class="tags">
+                  <% receptacle.tag_list.each do |tag| %>
+                    <%= link_to tag, receptacles_path(tag: tag) %>
+                  <% end %>
+                </div>
+                <div class="card-info">
+                  <h2><%= receptacle.name %></h2>
+                  <h3>€<%= number_with_delimiter(receptacle.price_per_day, :delimiter => ",") %> /day</h3>
+                </div>
               </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
-
 
   <div class="map-section" style=" margin-left: 20px;
     width: 40%;
