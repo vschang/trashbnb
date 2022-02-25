@@ -15,11 +15,11 @@ tag_list = ["Tiny","Small","Medium","A lot","Infinite"]
 
 p "cleaning the DB"
 
-trash_king = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: Faker::Beer.brand)
-the_garbage_man = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: Faker::Beer.brand)
-dumpster_fire = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: Faker::Beer.brand)
-basura_boy = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: Faker::Beer.brand)
-muffin_man = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: Faker::Beer.brand)
+p trash_king = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: Faker::Beer.brand)
+p the_garbage_man = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: Faker::Beer.brand)
+p dumpster_fire = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: Faker::Beer.brand)
+p basura_boy = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: Faker::Beer.brand)
+p muffin_man = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: Faker::Beer.brand)
 
 receptacle = Receptacle.new(
   name: 'Pre-Galvanized Trash Can',
@@ -33,6 +33,7 @@ file = URI.open('https://i5.walmartimages.com/asr/3c0b41de-a088-4dca-84a5-7153fd
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
 receptacle.tag_list.add("Medium")
 receptacle.save
+p receptacle
 
 receptacle = Receptacle.new(
   name: 'Dumpster on Fire',
@@ -46,6 +47,7 @@ file = URI.open('https://anentrepreneurswords.files.wordpress.com/2015/10/dumpst
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
 receptacle.tag_list.add("Medium")
 receptacle.save
+p receptacle
 
 receptacle = Receptacle.new(
   name: 'A landfill',
@@ -59,6 +61,7 @@ file = URI.open('https://static.sciencelearn.org.nz/images/images/000/004/365/em
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
 receptacle.tag_list.add("A lot")
 receptacle.save
+p receptacle
 
 receptacle = Receptacle.new(
   name: 'The Great Pacific Garbage Patch',
@@ -72,6 +75,7 @@ file = URI.open('https://i.pinimg.com/originals/89/73/b6/8973b6535e8849d9b3a095e
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
 receptacle.tag_list.add("A lot")
 receptacle.save
+p receptacle
 
 receptacle = Receptacle.new(
   name: 'The Satellite Graveyard',
@@ -85,6 +89,7 @@ file = URI.open('https://wp-assets.futurism.com/2018/02/spaceman.jpg')
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
 receptacle.tag_list.add("A lot")
 receptacle.save
+p receptacle
 
 receptacle = Receptacle.new(
   name: 'Black Hole',
@@ -98,6 +103,7 @@ file = URI.open('https://imageio.forbes.com/blogs-images/startswithabang/files/2
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
 receptacle.tag_list.add("Infinite")
 receptacle.save
+p receptacle
 
 receptacle = Receptacle.new(
   name: 'Golden Trashcan',
@@ -111,6 +117,7 @@ file = URI.open('https://ae01.alicdn.com/kf/H356a139e791e43d4b5759e6497ba9944m/S
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
 receptacle.tag_list.add("Small")
 receptacle.save
+p receptacle
 
 receptacle = Receptacle.new(
   name: 'Wicker Trashcan',
@@ -124,6 +131,7 @@ file = URI.open('https://im-7.eefa.co/clf-co7306-wb-rs-e1-s7.jpg')
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
 receptacle.tag_list.add("Small")
 receptacle.save
+p receptacle
 
 receptacle = Receptacle.new(
   name: 'A Deep Pit',
@@ -137,6 +145,7 @@ file = URI.open('https://lbc.ac.uk/wp-content/uploads/2019/12/Dvar1-1.jpg')
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
 receptacle.tag_list.add("Medium")
 receptacle.save
+p receptacle
 
 receptacle = Receptacle.new(
   name: 'The Suburban Dream',
@@ -150,6 +159,7 @@ file = URI.open('https://ejharrison.com/wp-content/uploads/2021/11/Thanksgiving_
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
 receptacle.tag_list.add("Medium")
 receptacle.save
+p receptacle
 
 receptacle = Receptacle.new(
   name: 'Baby Blue',
@@ -163,6 +173,7 @@ file = URI.open('https://img-new.cgtrader.com/items/927741/3577521ad0/large/ligh
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
 receptacle.tag_list.add("Medium")
 receptacle.save
+p receptacle
 
 receptacle = Receptacle.new(
   name: 'Beautiful Japanese Trash Can',
@@ -176,6 +187,7 @@ file = URI.open('https://pyxis.nymag.com/v1/imgs/6c9/3fd/ea37665e17eb362fb0ca4a7
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
 receptacle.tag_list.add("Small")
 receptacle.save
+p receptacle
 
 receptacle = Receptacle.new(
   name: 'Burning Metal Trashcan',
@@ -189,6 +201,7 @@ file = URI.open('https://yardblogger.com/wp-content/uploads/2021/02/neighbors-bu
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
 receptacle.tag_list.add("Medium")
 receptacle.save
+p receptacle
 
 receptacle = Receptacle.new(
   name: 'The Beach',
@@ -202,6 +215,7 @@ file = URI.open('https://hakaimagazine.com/wp-content/uploads/aacs_banner.jpg')
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
 receptacle.tag_list.add("A lot")
 receptacle.save
+p receptacle
 
 receptacle = Receptacle.new(
   name: 'Papelera novedosa Orso',
@@ -215,6 +229,7 @@ file = URI.open('https://es.glasdon.com/images/products/400/TidyBear-8014.jpg')
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
 receptacle.tag_list.add("Medium")
 receptacle.save
+p receptacle
 
 receptacle = Receptacle.new(
   name: 'Smart Sensor Waterproof Trash Can',
@@ -228,6 +243,7 @@ file = URI.open('https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcS8c12sv
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
 receptacle.tag_list.add("Small")
 receptacle.save
+p receptacle
 
 receptacle = Receptacle.new(
   name: 'The Colosseum',
@@ -241,6 +257,7 @@ file = URI.open('https://www.laprensalatina.com/wp-content/uploads/2020/06/cala-
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
 receptacle.tag_list.add("A lot")
 receptacle.save
+p receptacle
 
 receptacle = Receptacle.new(
   name: 'Bucket',
@@ -254,6 +271,7 @@ file = URI.open('https://www.collinsdictionary.com/images/full/bucket_211822708_
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
 receptacle.tag_list.add("Tiny")
 receptacle.save
+p receptacle
 
 receptacle = Receptacle.new(
   name: 'Full Dumpster',
@@ -267,6 +285,7 @@ file = URI.open('https://www.thespruce.com/thmb/vrF-by0szQ29qZjsm3LVOI7wNMM=/188
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
 receptacle.tag_list.add("Medium")
 receptacle.save
+p receptacle
 
 receptacle = Receptacle.new(
   name: 'Trash Can for Babies',
@@ -280,6 +299,7 @@ file = URI.open('https://canary.contestimg.wish.com/api/webimage/5c74df019d7d507
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
 receptacle.tag_list.add("Tiny")
 receptacle.save
+p receptacle
 
 receptacle = Receptacle.new(
   name: 'Empty Pool',
@@ -293,5 +313,6 @@ file = URI.open('https://media.istockphoto.com/photos/empty-swiming-pool-picture
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
 receptacle.tag_list.add("A lot")
 receptacle.save
+p receptacle
 
 p "Finished Seeding!"
