@@ -51,10 +51,11 @@ class ReceptaclesController < ApplicationController
 
     @receptacle.user = @user
     if @receptacle.save
-      redirect_to receptacle_path(@receptacle)
+      redirect_to receptacle_path(@receptacle), notice: "Thanks for creating your receptacle!"
     else
-      render :new
+      render :new, alert: "A problem has occurred while creating your receptacle"
     end
+
   end
 
   def edit
