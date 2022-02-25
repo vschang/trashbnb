@@ -8,10 +8,12 @@
             </div>
             <div class="container-desc">
               <p class="rec-desc"><%= @receptacle.description%></p>
-              <p><i class="fa-solid fa-money-check-dollar"></i> Price Per Day: €<%= number_with_delimiter(@receptacle.price_per_day, :delimiter => ",") %></p>
-              <p>Tags: <%=@receptacle.tag_list%> </p>
-              <p><i class="fa-solid fa-box-open"></i>  Capacity: <%= @receptacle.capacity %> L</p>
-              <p class="rec-desc"><i class="fa-solid fa-building"></i> <%= @receptacle.address %></p>
+              <div class="rec-desc">
+                <p><i class="fa-solid fa-money-check-dollar"></i> Price Per Day: €<%= number_with_delimiter(@receptacle.price_per_day, :delimiter => ",") %></p>
+                <p><i class="fa-solid fa-tag"></i> Tags: <%=@receptacle.tag_list%> </p>
+                <p><i class="fa-solid fa-box-open"></i> Capacity: <%= number_with_delimiter(@receptacle.capacity, :delimiter => ",")%> L</p>
+                <p><i class="fa-solid fa-building"></i> <%= @receptacle.address %></p>
+              </div>
               <div class='options-show'>
                   <% if policy(@receptacle).update? %>
                     <%= link_to 'Edit', edit_receptacle_path(@receptacle)%>
@@ -37,7 +39,7 @@
                   <%= simple_form_for [@receptacle,@booking] do |f| %>
                   <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
                   <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-                  <%= f.button :submit, "Go", class: "book-button" %>
+                  <%= f.button :submit, "Go", class: "form-button" %>
                   <% end %>
                 </div>
               </div>

@@ -1,6 +1,14 @@
 
-  <h1>Welcome to your Trashboard 🗑</h1>
-  <div class="container-image-map">
+
+<h1>Your Trashboard</h1>
+
+<div class='d-flex flex-row justify-content-around'>
+  <div class="dashboard-card user-profile">
+    <%= cl_image_tag @user.photo.key %>
+    <h2><%= @user.first_name %></h2>
+    <h2><%= @user.last_name %></h2>
+  </div>
+  <div>
 
     <div class="container-flex">
       <h2 class="dashboard-title">My Bookings</h2>
@@ -15,7 +23,7 @@
     </div>
 
     <div class="container-flex">
-      <h2 class="dashboard-title">My Receptacles for Offer</h2>
+      <h2 class="dashboard-title">My Receptacles</h2>
       <% @receptacles.each do |receptacle| %>
       <div class="dashboard-card">
         <h3><%=receptacle.name%></h3>
@@ -25,5 +33,3 @@
       </div>
       <%end%>
     </div>
-
-  </div>

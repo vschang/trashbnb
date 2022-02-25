@@ -16,9 +16,9 @@
           <div class="receptacle-card" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)), url('<%= cl_image_path receptacle.picture.key, height: 2000, width: 2000, crop: :fill %>')">
             <div class="card-body">
               <div class="card-info">
-            
-                <h2><%= receptacle.name %></h2>
-                <h3>€<%= number_with_delimiter(receptacle.price_per_day, :delimiter => ",") %> /day</h3>
+                  <p><%=receptacle.tag_list%></p>
+                <h2 class='glow'><%= receptacle.name %></h2>
+                <h3>€<%= number_with_delimiter(receptacle.price_per_day, :delimiter => ",") %> / day</h3>
               </div>
             </div>
           </div>
