@@ -7,17 +7,19 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require "open-uri"
 
+Booking.destroy_all
 User.destroy_all
 Receptacle.destroy_all
-Booking.destroy_all
+
+tag_list = ["Tiny","Small","Medium","A lot","Infinite"]
 
 p "cleaning the DB"
 
-trash_king = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: Faker::Beer.brand)
-the_garbage_man = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: Faker::Beer.brand)
-dumpster_fire = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: Faker::Beer.brand)
-basura_boy = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: Faker::Beer.brand)
-muffin_man = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: Faker::Beer.brand)
+p trash_king = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: Faker::Beer.brand)
+p the_garbage_man = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: Faker::Beer.brand)
+p dumpster_fire = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: Faker::Beer.brand)
+p basura_boy = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: Faker::Beer.brand)
+p muffin_man = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: Faker::Beer.brand)
 
 receptacle = Receptacle.new(
   name: 'Pre-Galvanized Trash Can',
@@ -29,7 +31,9 @@ receptacle = Receptacle.new(
 )
 file = URI.open('https://i5.walmartimages.com/asr/3c0b41de-a088-4dca-84a5-7153fd77347e_1.ba1bbe6206e16eb514ab5f860da9af3d.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF')
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
+receptacle.tag_list.add("Medium")
 receptacle.save
+p receptacle
 
 receptacle = Receptacle.new(
   name: 'Dumpster on Fire',
@@ -41,7 +45,9 @@ receptacle = Receptacle.new(
 )
 file = URI.open('https://anentrepreneurswords.files.wordpress.com/2015/10/dumpsterfire.jpg')
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
+receptacle.tag_list.add("Medium")
 receptacle.save
+p receptacle
 
 receptacle = Receptacle.new(
   name: 'A landfill',
@@ -53,7 +59,9 @@ receptacle = Receptacle.new(
 )
 file = URI.open('https://static.sciencelearn.org.nz/images/images/000/004/365/embed/ART_Landfills_BulldozerAtLandfill.jpeg?1597290151')
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
+receptacle.tag_list.add("A lot")
 receptacle.save
+p receptacle
 
 receptacle = Receptacle.new(
   name: 'The Great Pacific Garbage Patch',
@@ -65,7 +73,9 @@ receptacle = Receptacle.new(
 )
 file = URI.open('https://i.pinimg.com/originals/89/73/b6/8973b6535e8849d9b3a095e9c728b116.jpg')
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
+receptacle.tag_list.add("A lot")
 receptacle.save
+p receptacle
 
 receptacle = Receptacle.new(
   name: 'The Satellite Graveyard',
@@ -77,7 +87,9 @@ receptacle = Receptacle.new(
 )
 file = URI.open('https://wp-assets.futurism.com/2018/02/spaceman.jpg')
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
+receptacle.tag_list.add("A lot")
 receptacle.save
+p receptacle
 
 receptacle = Receptacle.new(
   name: 'Black Hole',
@@ -89,7 +101,9 @@ receptacle = Receptacle.new(
 )
 file = URI.open('https://imageio.forbes.com/blogs-images/startswithabang/files/2017/04/maxresdefault-1200x675.jpg?format=jpg&width=1200&fit=bounds')
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
+receptacle.tag_list.add("Infinite")
 receptacle.save
+p receptacle
 
 receptacle = Receptacle.new(
   name: 'Golden Trashcan',
@@ -101,7 +115,9 @@ receptacle = Receptacle.new(
 )
 file = URI.open('https://ae01.alicdn.com/kf/H356a139e791e43d4b5759e6497ba9944m/Stainless-Steel-Trash-Can-Shake-Cover-Home-Bathroom-Kitchen-Living-Room-Flip-Light-Luxury-with-Cover.jpg_Q90.jpg_.webp')
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
+receptacle.tag_list.add("Small")
 receptacle.save
+p receptacle
 
 receptacle = Receptacle.new(
   name: 'Wicker Trashcan',
@@ -113,7 +129,9 @@ receptacle = Receptacle.new(
 )
 file = URI.open('https://im-7.eefa.co/clf-co7306-wb-rs-e1-s7.jpg')
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
+receptacle.tag_list.add("Small")
 receptacle.save
+p receptacle
 
 receptacle = Receptacle.new(
   name: 'A Deep Pit',
@@ -125,7 +143,9 @@ receptacle = Receptacle.new(
 )
 file = URI.open('https://lbc.ac.uk/wp-content/uploads/2019/12/Dvar1-1.jpg')
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
+receptacle.tag_list.add("Medium")
 receptacle.save
+p receptacle
 
 receptacle = Receptacle.new(
   name: 'The Suburban Dream',
@@ -137,7 +157,9 @@ receptacle = Receptacle.new(
 )
 file = URI.open('https://ejharrison.com/wp-content/uploads/2021/11/Thanksgiving_holiday_banner_ej_harrison_blog_post_header.webp')
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
+receptacle.tag_list.add("Medium")
 receptacle.save
+p receptacle
 
 receptacle = Receptacle.new(
   name: 'Baby Blue',
@@ -149,7 +171,9 @@ receptacle = Receptacle.new(
 )
 file = URI.open('https://img-new.cgtrader.com/items/927741/3577521ad0/large/light-blue-trash-bin-with-two-wheels-3d-model-max-obj-3ds-c4d-lwo-lw-lws-ma-mb.jpg')
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
+receptacle.tag_list.add("Medium")
 receptacle.save
+p receptacle
 
 receptacle = Receptacle.new(
   name: 'Beautiful Japanese Trash Can',
@@ -161,7 +185,9 @@ receptacle = Receptacle.new(
 )
 file = URI.open('https://pyxis.nymag.com/v1/imgs/6c9/3fd/ea37665e17eb362fb0ca4a76d181e63a06.2x.rsquare.w600.jpg')
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
+receptacle.tag_list.add("Small")
 receptacle.save
+p receptacle
 
 receptacle = Receptacle.new(
   name: 'Burning Metal Trashcan',
@@ -173,7 +199,9 @@ receptacle = Receptacle.new(
 )
 file = URI.open('https://yardblogger.com/wp-content/uploads/2021/02/neighbors-burning-trash.jpg')
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
+receptacle.tag_list.add("Medium")
 receptacle.save
+p receptacle
 
 receptacle = Receptacle.new(
   name: 'The Beach',
@@ -185,6 +213,106 @@ receptacle = Receptacle.new(
 )
 file = URI.open('https://hakaimagazine.com/wp-content/uploads/aacs_banner.jpg')
 receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
+receptacle.tag_list.add("A lot")
 receptacle.save
+p receptacle
+
+receptacle = Receptacle.new(
+  name: 'Papelera novedosa Orso',
+  capacity: 100,
+  price_per_day: 427,
+  address: 'C. del Payaso Fofó, 22, 28018 Madrid',
+  description: 'La papelera infantil Orso es ideal para espacios exteriores alrededor de las escuelas y guarderías, diseñada para alentar y educar a los niños sobre la importancia de la recogida de residuos.',
+  user: muffin_man
+)
+file = URI.open('https://es.glasdon.com/images/products/400/TidyBear-8014.jpg')
+receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
+receptacle.tag_list.add("Medium")
+receptacle.save
+p receptacle
+
+receptacle = Receptacle.new(
+  name: 'Smart Sensor Waterproof Trash Can',
+  capacity: 100,
+  price_per_day: 427,
+  address: 'Av. del Planetario, 18, 28045 Madrid',
+  description: 'Forgot to bring your phone to the toilet and had to take a dump? Were you bored to tears reading the backs of shampoo bottles? Have you always dreamed of having a smart phone on the top of your trash can? We\'ve got you covered with our first ever smart trash can. Enjoy all the functionality of your smartphone on the lid of our trashcan.',
+  user: muffin_man
+)
+file = URI.open('https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcS8c12svyQ7KCsL2adlMb4ro_I4Y0tKYxGLxqdNEwoMEdYFCG16gqExaJvzUQY0YkY_zAnYcaFaow_XrdpaBybmP5j9NrPtgg&usqp=CAE')
+receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
+receptacle.tag_list.add("Small")
+receptacle.save
+p receptacle
+
+receptacle = Receptacle.new(
+  name: 'The Colosseum',
+  capacity: 100_000,
+  price_per_day: 100_000_000,
+  address: 'Piazza del Colosseo, 1, 00184 Roma RM, Italy',
+  description: 'Behold the magnificent and ancient Colosseum. The Colosseum is an oval amphitheatre in the centre of the city of Rome, Italy, just east of the Roman Forum. It is the largest ancient amphitheatre ever built, and is still the largest standing amphitheatre in the world today, despite its age. And now, for the first time ever, we invite you to put your trash in it. Be a part of history!',
+  user: muffin_man
+)
+file = URI.open('https://www.laprensalatina.com/wp-content/uploads/2020/06/cala-1-780x404.jpg')
+receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
+receptacle.tag_list.add("A lot")
+receptacle.save
+p receptacle
+
+receptacle = Receptacle.new(
+  name: 'Bucket',
+  capacity: 5,
+  price_per_day: 5,
+  address: 'C. de María Teresa Sáenz de Heredia, 10C, 28017 Madrid',
+  description: 'Good ol\' bucket',
+  user: muffin_man
+)
+file = URI.open('https://www.collinsdictionary.com/images/full/bucket_211822708_1000.jpg')
+receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
+receptacle.tag_list.add("Tiny")
+receptacle.save
+p receptacle
+
+receptacle = Receptacle.new(
+  name: 'Full Dumpster',
+  capacity: 500,
+  price_per_day: 50,
+  address: 'Calle Verdaguer y García, 56, 28027 Madrid',
+  description: 'Urgently need a dumpster full of trash? Say no more. We\'ve got you covered.',
+  user: muffin_man
+)
+file = URI.open('https://www.thespruce.com/thmb/vrF-by0szQ29qZjsm3LVOI7wNMM=/1883x1412/smart/filters:no_upscale()/dumpster-5a88b87eba617700362d9565.jpg')
+receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
+receptacle.tag_list.add("Medium")
+receptacle.save
+p receptacle
+
+receptacle = Receptacle.new(
+  name: 'Trash Can for Babies',
+  capacity: 0.5,
+  price_per_day: 2,
+  address: 'Av. de Concha Espina, 1, 28036 Madrid',
+  description: 'Do you have a hamster that needs to get rid of it\'s trash? Look no further, we have trash cans for babies available at your disposal.',
+  user: muffin_man
+)
+file = URI.open('https://canary.contestimg.wish.com/api/webimage/5c74df019d7d5078b5bb7752-large.jpg?cache_buster=8dd97f2d5f4f72e24bff88dee00d4c7d')
+receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
+receptacle.tag_list.add("Tiny")
+receptacle.save
+p receptacle
+
+receptacle = Receptacle.new(
+  name: 'Empty Pool',
+  capacity: 10_000,
+  price_per_day: 250,
+  address: 'Av. de los Reyes Católicos, 6, 28040 Madrid',
+  description: 'Have a swimming-pool-sized amount of trash? Put it in a swimming pool!',
+  user: muffin_man
+)
+file = URI.open('https://media.istockphoto.com/photos/empty-swiming-pool-picture-id1284705814?k=20&m=1284705814&s=612x612&w=0&h=ahwvmw1iNJjzfDriffnYJy8cnvDSXipffq7ZrKzuT40=')
+receptacle.picture.attach(io: file, filename: "#{receptacle.name}.png", content_type: 'image/png')
+receptacle.tag_list.add("A lot")
+receptacle.save
+p receptacle
 
 p "Finished Seeding!"
