@@ -1,5 +1,10 @@
-<h1>Welcome to your Trashboard Dashboard 🗑</h1>
+<h1>Your Trashboard</h1>
 <div class='d-flex flex-row justify-content-around'>
+  <div class="user-profile">
+    <%= cl_image_tag @user.photo.key %>
+    <h2><%= @user.first_name %></h2>
+    <h2><%= @user.last_name %></h2>
+  </div>
   <div>
     <h2>My Bookings</h2>
     <% @user.bookings.each do |booking| %>
