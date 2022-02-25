@@ -1,23 +1,12 @@
-<<<<<<< HEAD
 <h1>Your Trashboard</h1>
+
 <div class='d-flex flex-row justify-content-around'>
-  <div class="user-profile">
+  <div class="dashboard-card user-profile">
     <%= cl_image_tag @user.photo.key %>
     <h2><%= @user.first_name %></h2>
     <h2><%= @user.last_name %></h2>
   </div>
   <div>
-    <h2>My Bookings</h2>
-    <% @user.bookings.each do |booking| %>
-    <h2><%=booking.receptacle.name%></h2>
-    <img src='<%= cl_image_path booking.receptacle.picture.key, height: 500, width: 500, crop: :fill %>' >
-    <p>Your booking dates: <%=booking.start_date.strftime("%B %d")%> - <%=booking.end_date.strftime("%B %d, %Y")%></p>
-    <p>Total price:<%=booking.total_price%> €</p>
-    <%end%>
-=======
-<h1>Welcome to your Trashboard 🗑</h1>
-
-  <div class="container-image-map">
 
     <div class="container-flex">
       <h2 class="dashboard-title">My Bookings</h2>
@@ -32,7 +21,7 @@
     </div>
 
     <div class="container-flex">
-      <h2 class="dashboard-title">My Receptacles for Offer</h2>
+      <h2 class="dashboard-title">My Receptacles</h2>
       <% @receptacles.each do |receptacle| %>
       <div class="dashboard-card">
         <h3><%=receptacle.name%></h3>
@@ -42,10 +31,3 @@
       </div>
       <%end%>
     </div>
-
->>>>>>> master
-  </div>
-
-
-
-
