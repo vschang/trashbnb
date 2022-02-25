@@ -20,10 +20,10 @@
       <% end %>
     </div>
       <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
           <li>
             <%= link_to "Receptacles", receptacles_path, class: "nav-link" %>
           </li>
+        <% if user_signed_in? %>
 
           <li class="nav-item dropdown">
             <% if current_user.photo.attached? %>
