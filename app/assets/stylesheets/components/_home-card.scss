@@ -79,10 +79,13 @@
 .book-button{
   color: white;
   padding: 5px 20px;
-  background-color: black;
+  background-color:black;
   border-radius: 10px;
   font-size: 20px;
-
+  &:hover{
+    background-color: rgb(32, 32, 32);
+    color: white;
+  }
 }
 @-webkit-keyframes AnimationName {
   0% {
@@ -122,7 +125,13 @@
   100% {
     background-position: 0% 90% }
   }
-#rec-desc{
+.rec-desc{
   border-bottom: 1px solid white;
   padding-bottom: 20px;
+}
+.options-show{
+  a{
+    margin: 0;
+
+  }
 }
