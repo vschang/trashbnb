@@ -20,10 +20,10 @@
       <% end %>
     </div>
       <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
           <li>
             <%= link_to "Receptacles", receptacles_path, class: "nav-link" %>
           </li>
+        <% if user_signed_in? %>
 
           <li class="nav-item dropdown">
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="<%= cl_image_path current_user.photo.key %>"/>
