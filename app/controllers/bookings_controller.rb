@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to receptacle_path(@receptacle), notice: "You have created a booking!"
     else
-      render "receptacles/show"
+      render "receptacles/show", alert: "A problem has occurred while processing your booking"
     end
   end
 
