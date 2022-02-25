@@ -4,7 +4,9 @@
 
 <div class='d-flex flex-row justify-content-around'>
   <div class="dashboard-card user-profile">
-    <%= cl_image_tag @user.photo.key %>
+    <%= cl_image_tag @user.photo.key if @user.photo.attached? %>
+    <%= image_tag "blue trash.png" unless @user.photo.attached?%>
+
     <h2><%= @user.first_name %></h2>
     <h2><%= @user.last_name %></h2>
   </div>
