@@ -1,18 +1,19 @@
 <div class="map-cards-container">
 
-<%# <div>
-<p class='log-in-button regular'>Tiny</p>
-<p class='log-in-button regular'>Small</p>
-<p class='log-in-button regular'>Medium</p>
-<p class='log-in-button regular'>A lot</p>
-<p class='log-in-button regular'>Infinte</p>
-</div> %>
+<% @receptacles.each do |p| %>
+<h2><%= p.name %></h2>
+<div class="tags">
+  <% p.tag_list.each do |t| %>
+    <%= link_to t, tagged_path(tag: t) %>
+  <% end %>
+</div>
 
+<% end %>
   <div class="card-container">
     <% @receptacles.each do |receptacle| %>
       <% if policy(receptacle).show?%>
         <%= link_to receptacle do%>
-          <div class="receptacle-card" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)), url('<%= cl_image_path receptacle.picture.key, height: 2000, width: 2000, crop: :fill %>')">
+          <div class="receptacle-card" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)), url('<%= cl_image_path receptacle.picture.key, height: 2000, width: 2000, crop: :fill %>)">
             <div class="card-body">
               <div class="card-info">
                 <h2><%= receptacle.name %></h2>
