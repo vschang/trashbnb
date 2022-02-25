@@ -10,26 +10,21 @@
     <%= @message %>
 
     <div class="card-container">
-      <% @receptacles.each do |receptacle| %>
-        <% if policy(receptacle).show?%>
-          <%= link_to receptacle do%>
-            <div class="receptacle-card" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)), url('<%= cl_image_path receptacle.picture.key, height: 2000, width: 2000, crop: :fill %>')">
-              <div class="card-body">
-                <div class="tags">
-                  <% receptacle.tag_list.each do |tag| %>
-                    <%= link_to tag, receptacles_path(tag: tag) %>
-                  <% end %>
-                </div>
-                <div class="card-info">
-                  <h2><%= receptacle.name %></h2>
-                  <h3>€<%= number_with_delimiter(receptacle.price_per_day, :delimiter => ",") %> /day</h3>
-                </div>
+    <% @receptacles.each do |receptacle| %>
+      <% if policy(receptacle).show?%>
+        <%= link_to receptacle do%>
+          <div class="receptacle-card" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)), url('<%= cl_image_path receptacle.picture.key, height: 2000, width: 2000, crop: :fill %>')">
+            <div class="card-body">
+              <div class="card-info">
+                <h2><%= receptacle.name %></h2>
+                <h3>€<%= number_with_delimiter(receptacle.price_per_day, :delimiter => ",") %> /day</h3>
               </div>
             </div>
-          <% end %>
+          </div>
         <% end %>
       <% end %>
-    </div>
+    <% end %>
+  </div>
   </div>
 
   <div class="map-section" style=" margin-left: 20px;
@@ -42,5 +37,4 @@
     data-mapbox-markers-value="<%= @markers.to_json %>"
     data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-
 </div>
