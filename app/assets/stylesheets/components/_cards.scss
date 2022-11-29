@@ -122,7 +122,9 @@
 }
 
 .dashboard-title{
-  font-size: 50px;
+  font-size: 40px;
+  margin: 20px 0px 0px 30px;
+  text-decoration: underline;
 }
 
 .user-profile{
@@ -130,6 +132,7 @@
   display: flex !important;
   flex-direction: row !important;
   justify-content: space-around;
+  align-items:center;
   margin: auto;
   h1{
     font-size: 50px;
